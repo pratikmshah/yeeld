@@ -10,9 +10,13 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'yahoo-finance'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'jasmine-rails'
+  gem 'capybara'
 end
 
 group :development do
