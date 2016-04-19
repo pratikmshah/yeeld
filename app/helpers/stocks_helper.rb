@@ -13,13 +13,13 @@ module StocksHelper
   end
 
   # returns historical stock data for over a year
-  def stock_historical_info(ticker)
+  def stock_historical_data(ticker)
     YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - 365, end_date: Date.today })
   end
 
   # return chart data
   def chart_data(ticker)
-    data = stock_historical_info(ticker)
+    data = stock_historical_data(ticker)
     dates = parse_date(data)
     prices = parse_price(data)
     parse_chart_data(dates, prices)
@@ -28,24 +28,12 @@ module StocksHelper
   # below methods to be used as helpers for the above methods
   # return dates
   def parse_date(stock_data)
-    dates = []
-
-    stock_data.each do |date|
-      dates << date.trade_date
-    end
-
-    return dates
+    stock_data.map  { |date| date.trade_date }
   end
 
   # return closing stock price
   def parse_price(stock_data)
-    prices = []
-
-    stock_data.each do |price|
-      prices << price.close
-    end
-
-    return prices
+    stock_data.map { |price| price.close }
   end
 
   # convert arrays to date => price hash
