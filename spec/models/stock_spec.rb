@@ -10,7 +10,7 @@ RSpec.describe Stock, type: :model do
   end
 
   it "should save stock symbol and name" do
-    expect(@stock.ticker).to eq(lookup_stock)
+    expect(@stock.ticker).to eq(lookup_stock.upcase)
     expect(@stock.name).to eq('Micorsoft Corporation')
   end
 
@@ -20,7 +20,7 @@ RSpec.describe Stock, type: :model do
   end
 
   it "returns stock in the database" do
-    expect(Stock.find_by_ticker(lookup_stock)).to eq(@stock)
+    expect(Stock.find_by_ticker(lookup_stock.upcase)).to eq(@stock)
   end
 
   it "returns a new stock object" do
@@ -30,4 +30,10 @@ RSpec.describe Stock, type: :model do
   it "returns a new stock object" do
     expect(Stock.price(lookup_stock)).to be > 0
   end
+
+  it "returns a new stock object" do
+    @stock.save
+    expect(@stock.ticker).to eq(lookup_stock.upcase)
+  end
+
 end

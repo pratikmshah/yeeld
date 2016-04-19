@@ -1,7 +1,11 @@
 class Stock < ActiveRecord::Base
   # validate stock symbol and name are in the db and that only one instance is saved
   validates :name, presence: true, uniqueness: { case_sensitive: false }
-  validates :ticker, presence: true, uniqueness: { case_sensitive: false }
+  validates :ticker, presence: true
+
+  # before saving uppercase all letters
+  before_save :uppercase_field
+
 
   # return ticker symbol in our database instead of querying
   def self.find_by_ticker(ticker_symbol)
@@ -19,6 +23,12 @@ class Stock < ActiveRecord::Base
 
   # return current ask price of stock
   def self.price(ticker_symbol)
-    return StockQuote::Stock.quote(ticker_symbol).ask
+    StockQuote::Stock.quote(ticker_symbol).ask
   end
+
+  private
+
+    def uppercase_field
+      self.ticker.upcase!
+    end
 end
