@@ -1,0 +1,11 @@
+<h1>Your Portfolio</h1>
+<% @user_portfolio.each do |stock| %>
+  <% stock_data = stock_info(stock.ticker) %>
+    <% stock_data.each do |data| %>
+      <div>
+        <%= data.open %> <br>
+        <%= data.weeks_range_52 %>
+
+      </div>
+    <% end %>
+<% end %>
