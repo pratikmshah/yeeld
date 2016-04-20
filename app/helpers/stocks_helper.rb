@@ -1,8 +1,8 @@
 module StocksHelper
 
   # returns stock data for requested stock
-  def stock_info(ticker)
-    YahooFinance::Client.new.quotes([ticker], info_request)
+  def stock_info(tickers)
+    YahooFinance::Client.new.quotes(tickers, info_request)
   end
 
   # list of all data pieces to retrieve for stock request
