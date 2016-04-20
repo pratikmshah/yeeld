@@ -1,4 +1,7 @@
 class Stock < ActiveRecord::Base
+  has_many :user_stocks
+  has_many :users, through: :user_stocks
+
   # validate stock symbol and name are in the db and that only one instance is saved
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :ticker, presence: true
