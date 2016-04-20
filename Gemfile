@@ -10,6 +10,7 @@ gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'yahoo-finance'
 gem "stock_quote"
+
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
 
@@ -18,10 +19,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'jasmine-rails'
   gem 'capybara'
+gem "factory_girl_rails", "~> 4.0"
+  gem 'faker'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "better_errors"
 end
 
