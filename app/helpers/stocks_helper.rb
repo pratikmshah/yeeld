@@ -9,7 +9,8 @@ module StocksHelper
   def info_request
     [:name, :symbol, :ask, :change_and_percent_change, :last_trade_date, :days_range,
      :weeks_range_52, :open, :volume, :average_daily_volume, :market_capitalization,
-     :pe_ratio, :dividend_per_share, :dividend_yield, :earnings_per_share, :float_shares, :ebitda, :change, :close, :previous_close]
+     :pe_ratio, :dividend_per_share, :dividend_yield, :earnings_per_share, :float_shares,
+     :ebitda, :change, :close, :previous_close, :change_in_percent, :short_ratio]
   end
 
   # returns historical stock data for over a year
@@ -29,16 +30,16 @@ module StocksHelper
   def get_market_price(stock)
 
     # get previous close value, convert to float and round to 2 decimals
-    open = stock.previous_close.to_f.round(2)
+    open = stock.previous_close.to_f
 
     # get change value of stock, convert to array and then to float to 2 decimals
-    change_val = stock.change.split().first[1..-1].to_f.round(2)
+    change_val = stock.change.split().first[1..-1].to_f
 
     #depending on if stock is up or down return price
     if stock.change[0] == '+'
-      return (open + change_val)
+      return (open + change_val).round(2)
     else
-      return (open - change_val)
+      return (open - change_val).round(2)
     end
   end
 
