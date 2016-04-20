@@ -1,0 +1,25 @@
+<section>
+  <h3><%= data.name %>(<%= data.symbol.upcase %>)</h3>
+  <p>
+    <%= get_market_price(data) %>
+    <%= data.change[0..4] %>
+    (<%= data.change_in_percent %>)
+  </p>
+  <p>
+    <%= data.days_range %>
+    <%= data.weeks_range_52 %>
+    <%= data.open %>
+    <%= data.volume %>
+    <%= data.average_daily_volume %>
+    <%= data.market_capitalization %>
+    <%= data.pe_ratio %>
+  </p>
+  <p>
+    <%= data.dividend_per_share %>
+    <%= data.dividend_yield %>
+    <%= data.earnings_per_share %>
+    <%= data.float_shares %>
+    <%= data.ebitda %>
+    <%= data.short_ratio %>
+  </p>
+</section>

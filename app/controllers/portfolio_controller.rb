@@ -6,5 +6,7 @@ class PortfolioController < ApplicationController
     @portfolio = Stock.stock_tickers(@user_portfolio)   # retrieve only the stock tickers from the list
   end
 
+  def delete
 
+  end
 end
