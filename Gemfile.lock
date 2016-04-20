@@ -220,7 +220,7 @@ DEPENDENCIES
   byebug
   capybara
   devise
-  factory_girl_rails
+  factory_girl_rails (~> 4.0)
   faker
   jasmine-rails
   jbuilder (~> 2.0)
