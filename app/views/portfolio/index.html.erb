@@ -3,7 +3,7 @@
 <% stock_data = stock_info(@portfolio) %>
 <% stock_data.each do |data| %>
   <section>
-    <%=  %>
+    <%= get_market_price(data) %>
     <%=  %>
     <%=  %>
     <%=  %>
