@@ -14,22 +14,60 @@
   </section>
 
   <section>
-    Range: <%= stock.days_range %>
-    <%= stock.weeks_range_52 %>
-    <%= stock.open %>
-    <%= stock.volume %>
-    <%= stock.average_daily_volume %>
-    <%= stock.market_capitalization %>
-    <%= stock.pe_ratio %>
+    <table>
+      <tr>
+        <td>Range</td>
+        <td><%= stock.days_range %></td>
+      </tr>
+      <tr>
+        <td>52 week</td>
+        <td><%= stock.weeks_range_52 %></td>
+      </tr>
+      <tr>
+        <td>Open</td>
+        <td><%= stock.open %></td>
+      </tr>
+      <tr>
+        <td>Vol/Avg.</td>
+        <td>
+          <%= number_to_human(stock.volume) %> /
+          <%= number_to_human(stock.average_daily_volume) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Mkt cap</td>
+        <td><%= stock.market_capitalization %></td>
+      </tr>
+      <tr>
+        <td>P/E</td>
+        <td><%= stock.pe_ratio %></td>
+      </tr>
+    </table>
   </section>
 
   <section>
-    <%= stock.dividend_per_share %>
-    <%= stock.dividend_yield %>
-    <%= stock.earnings_per_share %>
-    <%= stock.float_shares %>
-    <%= stock.ebitda %>
-    <%= stock.short_ratio %>
+    <table>
+      <tr>
+        <td>Div/yield</td>
+        <td><%= stock.dividend_per_share %>/<%= stock.dividend_yield %></td>
+      </tr>
+      <tr>
+        <td>EPS</td>
+        <td><%= stock.earnings_per_share %></td>
+      </tr>
+      <tr>
+        <td>Shares</td>
+        <td><%= stock.float_shares %></td>
+      </tr>
+      <tr>
+        <td>EBITDA</td>
+        <td><%= stock.ebitda %></td>
+      </tr>
+      <tr>
+        <td>Short ratio</td>
+        <td><%= stock.short_ratio %></td>
+      </tr>
+    </table>
   </section>
 
 </article>
