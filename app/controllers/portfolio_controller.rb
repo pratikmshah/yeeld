@@ -6,7 +6,10 @@ class PortfolioController < ApplicationController
     @portfolio = Stock.stock_tickers(@user_portfolio)   # retrieve only the stock tickers from the list
   end
 
-  def delete
-
+  def destroy
+    user_portfolio_stock = UserStock.where(user_id: current_user.id, stock_id: params[:id])
+    user_portfolio_stock.first.destroy
+    flash[:notice] = "Stock has been removed from your portfolio"
+    redirect_to portfolio_index_path
   end
 end

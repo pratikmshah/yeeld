@@ -1,25 +1,27 @@
 <section>
-  <h3><%= data.name %>(<%= data.symbol.upcase %>)</h3>
+  <h3><%= stock.name %>(<%= stock.symbol.upcase %>)
+    <span> <%= link_to("X", portfolio_path(Stock.find_by(ticker: stock.symbol.upcase)), method: :delete) %> </span>
+  </h3>
   <p>
-    <%= get_market_price(data) %>
-    <%= data.change[0..4] %>
-    (<%= data.change_in_percent %>)
+    <%= get_market_price(stock) %>
+    <%= stock.change[0..4] %>
+    (<%= stock.change_in_percent %>)
   </p>
   <p>
-    <%= data.days_range %>
-    <%= data.weeks_range_52 %>
-    <%= data.open %>
-    <%= data.volume %>
-    <%= data.average_daily_volume %>
-    <%= data.market_capitalization %>
-    <%= data.pe_ratio %>
+    <%= stock.days_range %>
+    <%= stock.weeks_range_52 %>
+    <%= stock.open %>
+    <%= stock.volume %>
+    <%= stock.average_daily_volume %>
+    <%= stock.market_capitalization %>
+    <%= stock.pe_ratio %>
   </p>
   <p>
-    <%= data.dividend_per_share %>
-    <%= data.dividend_yield %>
-    <%= data.earnings_per_share %>
-    <%= data.float_shares %>
-    <%= data.ebitda %>
-    <%= data.short_ratio %>
+    <%= stock.dividend_per_share %>
+    <%= stock.dividend_yield %>
+    <%= stock.earnings_per_share %>
+    <%= stock.float_shares %>
+    <%= stock.ebitda %>
+    <%= stock.short_ratio %>
   </p>
 </section>
