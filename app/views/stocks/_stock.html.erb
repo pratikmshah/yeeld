@@ -7,7 +7,7 @@
                                                   data: { confirm: "Delete #{stock.symbol.upcase} from portfolio?"}) %>
       <div class="col-xs-12 clearfix">
         <h4>
-          <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
+          <%= link_to "#{stock.name}   (#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
         </h4>
       </div>
     </section>
@@ -33,40 +33,40 @@
         <div class="table-responsive">
           <table class="table table-condensed">
             <tr>
-              <td class="text-muted" title="price range (low - high) in current day">Range</td>
+              <td class="text-muted" title="Price range (low - high) in current day">Range</td>
               <td><%= stock.days_range %></td>
-              <td class="text-muted">Div/yield</td>
+              <td class="text-muted" title="Div is total dividend paid in last four quarters. Yield is current dividend return value from the last four quarters.">Div/yield</td>
               <td><%= stock.dividend_per_share %>/<%= stock.dividend_yield %></td>
             </tr>
             <tr>
-              <td class="text-muted">52 week</td>
+              <td class="text-muted" title="Price range (low - high) in last 52 weeks">52 week</td>
               <td><%= stock.weeks_range_52 %></td>
-              <td class="text-muted">EPS</td>
+              <td class="text-muted" title="Earnings company makes per share of stock">EPS</td>
               <td><%= stock.earnings_per_share %></td>
             </tr>
             <tr>
-              <td class="text-muted">Open</td>
+              <td class="text-muted" title="Opening price of the day">Open</td>
               <td><%= stock.open %></td>
-              <td class="text-muted">Shares</td>
+              <td class="text-muted" title="Total outstanding shares of the company">Shares</td>
               <td><%= number_to_human(stock.float_shares) %></td>
             </tr>
             <tr>
-              <td class="text-muted">Vol/Avg.</td>
+              <td class="text-muted" title="Vol - number of shares traded in current session. Average volume is measured over 30 days">Vol/Avg.</td>
               <td>
                 <%= number_to_human(stock.volume) %> /
                 <%= number_to_human(stock.average_daily_volume) %>
               </td>
-              <td class="text-muted">EBITDA</td>
+              <td class="text-muted" title="Earnings before interest, taxes, depreciation, and amortization">EBITDA</td>
               <td><%= stock.ebitda %></td>
             </tr>
             <tr>
-              <td class="text-muted">Mkt cap</td>
+              <td class="text-muted" title="Current value of company measuerd by total shares * stock price">Mkt cap</td>
               <td><%= stock.market_capitalization %></td>
-              <td class="text-muted">Short ratio</td>
+              <td class="text-muted" title="Short interest divided by avg trading volume">Short ratio</td>
               <td><%= stock.short_ratio %></td>
             </tr>
             <tr>
-              <td class="text-muted">P/E</td>
+              <td class="text-muted" title="Price per earnings = price / earnings per share">P/E</td>
               <td><%= stock.pe_ratio %></td>
             </tr>
           </table>
