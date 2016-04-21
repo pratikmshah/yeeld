@@ -1,5 +1,12 @@
 // Place all the styles related to the portfolio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 // INDEX
+
+$background-clr: #131314;
+
+#main { background-color: $background-clr; }
+
+#portfolio-title { color: white; }
+
+#add-stock { margin-bottom: 20px; }

@@ -1,6 +1,6 @@
-<h1 class="text-center">Your Portfolio</h1>
+<h1 id="portfolio-title" class="text-center">Your Portfolio</h1>
 
-<div class="row">
+<div id="add-stock" class="row">
   <div class="col-sm-6 col-sm-offset-3">
     <div class="form-inline text-center">
       <%= form_for @stock do |f| %>
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div>
+<div id="stocks-container" class="center-block">
   <% stock_data = stock_info(@portfolio) %>
   <% stock_data.each do |data| %>
     <%= render '/stocks/stock', stock: data %>
