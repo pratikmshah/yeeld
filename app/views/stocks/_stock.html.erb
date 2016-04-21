@@ -5,17 +5,26 @@
       <div class="col-xs-12">
         <h4>
           <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
-          <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete) %> </span>
+          <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete,
+                                                             data: { confirm: "Delete #{stock.symbol.upcase} from portfolio?"}) %> </span>
         </h4>
       </div>
     </section>
 
     <section>
       <span class="h2 mkt-price"><%= get_market_price(stock) %></span>
-      <span class="h3">
-        <%= stock.change[0..4] %>
-        (<%= stock.change_in_percent %>)
-      </span>
+
+      <% if stock.change[0] == '-' %>
+        <span class="h3 text-danger">
+          <%= stock.change[0..4] %>
+          (<%= stock.change_in_percent %>)
+        </span>
+      <% else %>
+        <span class="h3 text-success">
+          <%= stock.change[0..4] %>
+          (<%= stock.change_in_percent %>)
+        </span>
+      <% end %>
     </section>
 
     <div class="row">

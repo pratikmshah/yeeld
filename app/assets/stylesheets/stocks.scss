@@ -5,6 +5,7 @@
 // Variables
 $stock-bx-clr: #1F2123;
 $stock-comp-clr: #00AEEF;
+$mkt-price: #688AFC;
 $w-clr: white;
 $r-clr: red;
 
@@ -39,9 +40,14 @@ article.market-data {
     }
   }
 
-  .mkt-price { margin-right: 5px; }
+  .mkt-price {
+    margin-right: 5px;
+    color: $mkt-price;
+  }
 }
 
+
+// MEDIA Qs
 @media screen and (min-width: 1440px) {
   article.market-data {
     max-width: 400px;
