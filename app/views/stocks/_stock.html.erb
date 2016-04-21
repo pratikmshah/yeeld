@@ -1,73 +1,78 @@
-<article class="market-data">
-  <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
-  <section class="market-header">
-    <h3>
-      <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
-      <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete) %> </span>
-    </h3>
-  </section>
+<article class="market-data col-sm-4">
 
-  <section>
-    <%= get_market_price(stock) %>
-    <%= stock.change[0..4] %>
-    (<%= stock.change_in_percent %>)
-  </section>
+    <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
+    <section class="market-header col-xs-12">
+      <h4>
+        <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
+        <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete) %> </span>
+      </h4>
+    </section>
 
-  <section>
-    <table>
-      <tr>
-        <td>Range</td>
-        <td><%= stock.days_range %></td>
-      </tr>
-      <tr>
-        <td>52 week</td>
-        <td><%= stock.weeks_range_52 %></td>
-      </tr>
-      <tr>
-        <td>Open</td>
-        <td><%= stock.open %></td>
-      </tr>
-      <tr>
-        <td>Vol/Avg.</td>
-        <td>
-          <%= number_to_human(stock.volume) %> /
-          <%= number_to_human(stock.average_daily_volume) %>
-        </td>
-      </tr>
-      <tr>
-        <td>Mkt cap</td>
-        <td><%= stock.market_capitalization %></td>
-      </tr>
-      <tr>
-        <td>P/E</td>
-        <td><%= stock.pe_ratio %></td>
-      </tr>
-    </table>
-  </section>
+    <section>
+      <%= get_market_price(stock) %>
+      <%= stock.change[0..4] %>
+      (<%= stock.change_in_percent %>)
+    </section>
 
-  <section>
-    <table>
-      <tr>
-        <td>Div/yield</td>
-        <td><%= stock.dividend_per_share %>/<%= stock.dividend_yield %></td>
-      </tr>
-      <tr>
-        <td>EPS</td>
-        <td><%= stock.earnings_per_share %></td>
-      </tr>
-      <tr>
-        <td>Shares</td>
-        <td><%= stock.float_shares %></td>
-      </tr>
-      <tr>
-        <td>EBITDA</td>
-        <td><%= stock.ebitda %></td>
-      </tr>
-      <tr>
-        <td>Short ratio</td>
-        <td><%= stock.short_ratio %></td>
-      </tr>
-    </table>
-  </section>
+    <section>
+      <div class="table-responsive">
+        <table class="table table-condensed">
+          <tr>
+            <td>Range</td>
+            <td><%= stock.days_range %></td>
+          </tr>
+          <tr>
+            <td>52 week</td>
+            <td><%= stock.weeks_range_52 %></td>
+          </tr>
+          <tr>
+            <td>Open</td>
+            <td><%= stock.open %></td>
+          </tr>
+          <tr>
+            <td>Vol/Avg.</td>
+            <td>
+              <%= number_to_human(stock.volume) %> /
+              <%= number_to_human(stock.average_daily_volume) %>
+            </td>
+          </tr>
+          <tr>
+            <td>Mkt cap</td>
+            <td><%= stock.market_capitalization %></td>
+          </tr>
+          <tr>
+            <td>P/E</td>
+            <td><%= stock.pe_ratio %></td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <div class="table-responsive">
+        <table class="table table-condensed">
+          <tr>
+            <td>Div/yield</td>
+            <td><%= stock.dividend_per_share %>/<%= stock.dividend_yield %></td>
+          </tr>
+          <tr>
+            <td>EPS</td>
+            <td><%= stock.earnings_per_share %></td>
+          </tr>
+          <tr>
+            <td>Shares</td>
+            <td><%= stock.float_shares %></td>
+          </tr>
+          <tr>
+            <td>EBITDA</td>
+            <td><%= stock.ebitda %></td>
+          </tr>
+          <tr>
+            <td>Short ratio</td>
+            <td><%= stock.short_ratio %></td>
+          </tr>
+        </table>
+      </div>
+    </section>
 
 </article>

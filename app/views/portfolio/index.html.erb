@@ -1,10 +1,16 @@
 <h1 class="text-center">Your Portfolio</h1>
 
-<div>
-  <%= form_for @stock do |f| %>
-    <%= f.text_field :ticker, placeholder: "Ticker, Symbol" %>
-    <%= f.submit "Add stock" %>
-  <% end %>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3">
+    <div class="form-inline text-center">
+      <%= form_for @stock do |f| %>
+        <div class="form-group text-center">
+          <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
+          <%= f.submit "Add stock", class: "form-control btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <div>
