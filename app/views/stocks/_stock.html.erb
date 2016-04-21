@@ -2,11 +2,12 @@
 
     <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
     <section class="market-header row">
-      <div class="col-xs-12">
+      <%= link_to(" ", portfolio_path(stock_obj), method: :delete,
+                                                  class: "del-stock glyphicon glyphicon-remove",
+                                                  data: { confirm: "Delete #{stock.symbol.upcase} from portfolio?"}) %>
+      <div class="col-xs-12 clearfix">
         <h4>
           <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
-          <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete,
-                                                             data: { confirm: "Delete #{stock.symbol.upcase} from portfolio?"}) %> </span>
         </h4>
       </div>
     </section>
@@ -32,7 +33,7 @@
         <div class="table-responsive">
           <table class="table table-condensed">
             <tr>
-              <td class="text-muted">Range</td>
+              <td class="text-muted" title="price range (low - high) in current day">Range</td>
               <td><%= stock.days_range %></td>
               <td class="text-muted">Div/yield</td>
               <td><%= stock.dividend_per_share %>/<%= stock.dividend_yield %></td>

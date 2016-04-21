@@ -16,7 +16,19 @@ article.market-data {
   background-color: $stock-bx-clr;
 
   section.market-header {
+
+    .del-stock {
+      float: right;
+      text-decoration: none;
+      color: $w-clr;
+
+      &:hover { color: $r-clr; }
+    }
+
     div h4 {
+
+      margin-top: 0;
+
       a {
         text-decoration: none;
         color: $stock-comp-clr;
