@@ -29,6 +29,11 @@ class Stock < ActiveRecord::Base
     StockQuote::Stock.quote(ticker_symbol).ask
   end
 
+  # parse through array of stock objects returning ticker in new array
+  def self.stock_tickers(stock_obj)
+    stock_obj.map { |stock| stock.ticker }
+  end
+
   private
 
     def uppercase_field

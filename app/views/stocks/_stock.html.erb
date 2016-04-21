@@ -1,0 +1,35 @@
+<article class="market-data">
+  <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
+  <section class="market-header">
+    <h3>
+      <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
+      <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete) %> </span>
+    </h3>
+  </section>
+
+  <section>
+    <%= get_market_price(stock) %>
+    <%= stock.change[0..4] %>
+    (<%= stock.change_in_percent %>)
+  </section>
+
+  <section>
+    Range: <%= stock.days_range %>
+    <%= stock.weeks_range_52 %>
+    <%= stock.open %>
+    <%= stock.volume %>
+    <%= stock.average_daily_volume %>
+    <%= stock.market_capitalization %>
+    <%= stock.pe_ratio %>
+  </section>
+
+  <section>
+    <%= stock.dividend_per_share %>
+    <%= stock.dividend_yield %>
+    <%= stock.earnings_per_share %>
+    <%= stock.float_shares %>
+    <%= stock.ebitda %>
+    <%= stock.short_ratio %>
+  </section>
+
+</article>

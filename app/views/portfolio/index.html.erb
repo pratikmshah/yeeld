@@ -1,0 +1,15 @@
+<h1>Your Portfolio</h1>
+
+<div>
+  <%= form_for @stock do |f| %>
+    <%= f.text_field :ticker, placeholder: "Ticker, Symbol" %>
+    <%= f.submit "Add stock" %>
+  <% end %>
+</div>
+
+<div>
+  <% stock_data = stock_info(@portfolio) %>
+  <% stock_data.each do |data| %>
+    <%= render '/stocks/stock', stock: data %>
+  <% end %>
+</div>

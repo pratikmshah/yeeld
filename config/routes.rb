@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   devise_for :users
+  resources :stocks, only: [:new, :create, :show]
+  resources :portfolio
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
