@@ -1,17 +1,21 @@
 <article class="market-data col-sm-4">
 
     <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
-    <section class="market-header col-xs-12">
-      <h4>
-        <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
-        <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete) %> </span>
-      </h4>
+    <section class="market-header row">
+      <div class="col-xs-12">
+        <h4>
+          <%= link_to "#{stock.name}(#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
+          <span> <%= link_to("X", portfolio_path(stock_obj), method: :delete) %> </span>
+        </h4>
+      </div>
     </section>
 
     <section>
-      <%= get_market_price(stock) %>
-      <%= stock.change[0..4] %>
-      (<%= stock.change_in_percent %>)
+      <span class="h2 mkt-price"><%= get_market_price(stock) %></span>
+      <span class="h3">
+        <%= stock.change[0..4] %>
+        (<%= stock.change_in_percent %>)
+      </span>
     </section>
 
     <section>
