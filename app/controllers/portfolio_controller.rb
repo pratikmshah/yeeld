@@ -6,6 +6,11 @@ class PortfolioController < ApplicationController
     @portfolio = Stock.stock_tickers(@user_portfolio)   # retrieve only the stock tickers from the list
   end
 
+  def show
+    @stock = Stock.find(params[:id])
+    @stock = Stock.stock_tickers([@stock])
+  end
+
   def destroy
     user_portfolio_stock = UserStock.where(user_id: current_user.id, stock_id: params[:id])
     user_portfolio_stock.first.destroy

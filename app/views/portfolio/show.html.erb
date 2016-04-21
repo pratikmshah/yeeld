@@ -1,0 +1,3 @@
+<% stock_data = stock_info(@stock.to_a) %>
+<%= render '/stocks/stock', stock: stock_data.first %>
+<%= link_to "Back to your portfolio", portfolio_index_path %>
