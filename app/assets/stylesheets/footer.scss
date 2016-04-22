@@ -1,0 +1,36 @@
+$site-clr: #51A116;
+$w-clr: #FFF;
+$b-clr: #000;
+
+footer {
+  background-color: $site-clr;
+  border-top: 1px solid $b-clr;
+
+  #foot-logo {
+    margin-top: 32px;
+    img {
+      background-color: $b-clr;
+    }
+  }
+
+  #foot-info {
+    margin-top: 10px;
+    padding-top: 10px;
+
+    a {
+      color: $w-clr;
+      text-decoration: none;
+
+      &:hover { color: $b-clr; }
+    }
+  }
+
+  #social {
+    margin-bottom: 35px;
+
+    li a img {
+      width: 32px;
+      height: auto;
+    }
+  }
+}

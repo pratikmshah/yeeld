@@ -11,8 +11,6 @@ $w-clr: white;
 $r-clr: red;
 
 // Utility
-.d { border: 1px solid $r-clr; }
-
 
 // Stock Model
 article.market-data {
@@ -62,6 +60,8 @@ article.market-data {
   }
 }
 
+.spacer { min-height: 150px; }
+
 
 // MEDIA Qs
 @media screen and (max-width: 435px) {
@@ -73,12 +73,12 @@ article.market-data {
   div.table-responsive { border: none; }
 }
 
-@media (min-width: 436px) and (max-width: 1200px) {
+@media (min-width: 436px) and (max-width: 1280px) {
 
   #stocks-container { padding-left: 15px; }
 
   article.market-data {
-    max-width: 350px;
+    max-width: 375px;
   }
 }
 

@@ -10,7 +10,9 @@ $form-font: 'Open Sans', sans-serif;
 $site-clr: $backgrd-login;
 
 // LOGIN PAGE & SIGN UP PAGE
-body#login, body#sign-up {
+body.login-sign { background-color: $site-clr; }
+
+div#login, div#sign-up {
   background-color: $backgrd-login;
   font-family: $form-font;
 
@@ -58,6 +60,8 @@ body#login, body#sign-up {
 
 #xtra-link {
   margin-top: 30px;
+  margin-bottom: 150px;
+
   font-weight: 400;
 
   span.fade {
@@ -74,7 +78,7 @@ body#login, body#sign-up {
 
 // MEDIA Qs
 @media (max-width: 436px) {
-  body#login, body#sign-up {
+  div#login, div#sign-up {
     h1 {
       display: none;
     }
