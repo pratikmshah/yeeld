@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 // Variables
 $stock-bx-clr: #1F2123;
 $stock-comp-clr: #00AEEF;
@@ -9,7 +10,11 @@ $mkt-price: #688AFC;
 $w-clr: white;
 $r-clr: red;
 
+// Utility
+.d { border: 1px solid $r-clr; }
 
+
+// Stock Model
 article.market-data {
   margin: 3px;
   background-color: $stock-bx-clr;
