@@ -1,11 +1,82 @@
 // CSS for Login and Sign up page
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
 
 // Variables
+$w-clr: #FFF;
 $backgrd-login: #51A116;
+$backgrd-form: $w-clr;
+$form-font: 'Open Sans', sans-serif;
+$site-clr: $backgrd-login;
 
+// LOGIN PAGE
 body#login {
   background-color: $backgrd-login;
+  font-family: $form-font;
 
-  h1 { color: w}
+  .log-sign-header {
+    margin: 25px 0;
+
+    h1 {
+      color: $w-clr;
+      font-weight: 300;
+    }
+  }
+
+  div.sign-log-form {
+    border-radius: 4px;
+    -web-kit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    max-width: 380px;
+    padding: 0 30px;
+    background-color: $backgrd-form;
+
+    .logo img {
+      margin: 0 auto;
+      display: block;
+      padding: 4.5em 0;
+    }
+
+    .actions input {
+      height: 42px;
+      margin-bottom: 1em;
+    }
+
+    .forgot {
+      color: $site-clr;
+      text-decoration: none;
+    }
+  }
 }
+
+#xtra-link {
+  margin-top: 30px;
+  font-weight: 400;
+
+  span.fade {
+    color: $w-clr;
+    opacity: .6;
+    margin-right: 3px;
+  }
+
+  a {
+    color: $w-clr;
+    text-decoration: none;
+  }
+}
+
+// MEDIA Qs
+@media (max-width: 436px) {
+  body#login {
+    h1 {
+      display: none;
+    }
+
+    div.sign-log-form {
+      padding: 0 15px;
+    }
+  }
+}
+
+/*---------------------------*/
+// SIGN UP PAGE
