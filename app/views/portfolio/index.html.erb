@@ -13,9 +13,11 @@
   </div>
 </div>
 
-<div id="stocks-container" class="center-block">
-  <% stock_data = stock_info(@portfolio) %>
-  <% stock_data.each do |data| %>
-    <%= render '/stocks/stock', stock: data %>
-  <% end %>
+<div class="container-fluid no-pad">
+  <div id="stocks-container" class="col-xs-12 no-pad">
+    <% stock_data = stock_info(@portfolio) %>
+    <% stock_data.each do |data| %>
+      <%= render '/stocks/stock', stock: data %>
+    <% end %>
+  </div>
 </div>

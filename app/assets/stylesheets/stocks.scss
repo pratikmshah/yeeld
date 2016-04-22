@@ -11,14 +11,13 @@ $r-clr: red;
 
 
 article.market-data {
-  max-width: 370px;
-  margin: 2px;
+  margin: 3px;
   background-color: $stock-bx-clr;
-
   section.market-header {
 
     .del-stock {
       float: right;
+      padding: 3px;
       text-decoration: none;
       color: $w-clr;
 
@@ -60,9 +59,21 @@ article.market-data {
 
 
 // MEDIA Qs
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 435px) {
   article.market-data {
     margin-bottom: 15px;
+  }
+
+  div.no-pad { padding: 0; }
+  div.table-responsive { border: none; }
+}
+
+@media (min-width: 436px) and (max-width: 1200px) {
+
+  #stocks-container { padding-left: 15px; }
+
+  article.market-data {
+    max-width: 350px;
   }
 }
 
