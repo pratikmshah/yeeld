@@ -24,9 +24,16 @@ body#login, body#sign-up {
   }
 
   div.sign-log-form {
-    border-radius: 4px;
+    // shadow effect on login/signup box
+  -webkit-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+         box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+
+    // border for on login/signup box
     -web-kit-border-radius: 4px;
-    -moz-border-radius: 4px;
+      -moz-border-radius: 4px;
+          border-radius: 4px;
+
     max-width: 380px;
     padding: 0 30px;
     background-color: $backgrd-form;
