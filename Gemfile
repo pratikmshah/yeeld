@@ -7,7 +7,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
-gem 'twitter-bootstrap-rails'
 gem 'yahoo-finance'
 gem "stock_quote"
 
@@ -19,7 +18,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'jasmine-rails'
   gem 'capybara'
-gem "factory_girl_rails", "~> 4.0"
+  gem "factory_girl_rails", "~> 4.0"
   gem 'faker'
 end
 

@@ -1,3 +1,85 @@
 // Place all the styles related to the stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Variables
+$stock-bx-clr: #1F2123;
+$stock-comp-clr: #00AEEF;
+$mkt-price: #688AFC;
+$w-clr: white;
+$r-clr: red;
+
+
+article.market-data {
+  margin: 3px;
+  background-color: $stock-bx-clr;
+  section.market-header {
+
+    .del-stock {
+      float: right;
+      padding: 3px;
+      text-decoration: none;
+      color: $w-clr;
+
+      &:hover { color: $r-clr; }
+    }
+
+    div h4 {
+
+      margin-top: 0;
+
+      a {
+        text-decoration: none;
+        color: $stock-comp-clr;
+
+        &:hover { color: $r-clr; }
+      }
+    }
+  }
+
+  table {
+    tr {
+      td {
+        border: none;
+        padding: 2px;
+        font-size: 13px;
+      }
+
+      td.text-muted + td {
+        color: $w-clr;
+      }
+    }
+  }
+
+  .mkt-price {
+    margin-right: 5px;
+    color: $mkt-price;
+  }
+}
+
+
+// MEDIA Qs
+@media screen and (max-width: 435px) {
+  article.market-data {
+    margin-bottom: 15px;
+  }
+
+  div.no-pad { padding: 0; }
+  div.table-responsive { border: none; }
+}
+
+@media (min-width: 436px) and (max-width: 1200px) {
+
+  #stocks-container { padding-left: 15px; }
+
+  article.market-data {
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  article.market-data {
+    max-width: 400px;
+    margin: 3px;
+  }
+}
