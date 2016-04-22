@@ -1,44 +1,44 @@
 <body id="login" class="container">
 
-<div class="col-xs-12 log-sign-header">
-  <h1 class="text-center">Log In To Your Account</h1>
-</div>
-
-<div class="sign-log-form col-sm-6 col-sm-offset-4 col-xs-12">
-  <div class="logo">
-    <img src="/assets/logo.png" alt="logo">
+  <div class="col-xs-12 log-sign-header">
+    <h1 class="text-center">Log In To Your Account</h1>
   </div>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="field form-group">
-      <%= f.email_field :email, autofocus: true, placeholder: 'Email', class: "form-control input-lg" %>
+  <div class="sign-log-form col-sm-6 col-sm-offset-4 col-xs-12">
+    <div class="logo">
+      <img src="/assets/logo.png" alt="logo">
     </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="field form-group">
-      <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: "form-control input-lg" %>
-    </div>
-
-    <% if devise_mapping.rememberable? -%>
       <div class="field form-group">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
+        <%= f.email_field :email, autofocus: true, placeholder: 'Email', class: "form-control input-lg" %>
       </div>
-    <% end -%>
 
-    <div class="actions form-group">
-      <%= f.submit "Log in", class: "form-control btn btn-success" %>
-    </div>
+      <div class="field form-group">
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password', class: "form-control input-lg" %>
+      </div>
 
-    <div class="form-group text-center">
-     <%= link_to "Forgot password?", new_password_path(resource_name), class: "forgot" %>
-    </div>
-  <% end %>
-</div>
+      <% if devise_mapping.rememberable? -%>
+        <div class="field form-group">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
 
-<div id="xtra-link" class="col-xs-12 text-center">
-  <span class="fade">Don't have an account yet?</span>
-  <%= link_to "Sign up.", new_registration_path(resource_name) %><br />
- <!-- <%= render "devise/shared/links" %> -->
-</div>
+      <div class="actions form-group">
+        <%= f.submit "Log in", class: "form-control btn btn-success" %>
+      </div>
+
+      <div class="form-group text-center">
+       <%= link_to "Forgot password?", new_password_path(resource_name), class: "forgot" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="xtra-link" class="col-xs-12 text-center">
+    <span class="fade">Don't have an account yet?</span>
+    <%= link_to "Sign up.", new_registration_path(resource_name) %><br />
+   <!-- <%= render "devise/shared/links" %> -->
+  </div>
 
 </body>
