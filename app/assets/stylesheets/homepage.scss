@@ -1,5 +1,6 @@
 $form-font: 'Open Sans', sans-serif;
 $w-clr: #FFF;
+$site-clr: #51A116;
 
 // Welcome page
 div#welcome {
@@ -11,8 +12,10 @@ div#welcome {
   h1 {
     padding: 25px;
     font-family: $form-font;
-    font-weight: 300;
+    font-weight: 700;
     line-height: 1.5;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: $site-clr;
   }
 }
 
