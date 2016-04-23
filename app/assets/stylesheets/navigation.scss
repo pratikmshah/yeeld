@@ -1,4 +1,5 @@
 $dig-clr: #688AFC;
+$site-clr: #51A116;
 
 .navspacer { height: 50px; }
 
@@ -10,5 +11,13 @@ nav {
       width: 55px;
       height: auto;
     }
+  }
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: $site-clr !important;
+
+  &:hover {
+    color: $dig-clr !important;
   }
 }
