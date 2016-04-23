@@ -1,5 +1,15 @@
-<div id="welcome" class="container">
-  <h1>Welcome to Yeeld</h1>
-  <%= link_to("Login", new_user_session_path) %>
-  <%= link_to("Sign up", new_user_registration_path) %>
+<div id="welcome" class="container-fluid">
+  <article>
+    <div class="col-sm-8 col-sm-offset-2 col-xs-12">
+      <h1 class="text-center">Manage stocks in your portfolio and get real time info, simple and easy.</h1>
+    </div>
+
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <%= link_to("Login", new_user_session_path, class: "btn btn-success btn-lg") %>
+      <%= link_to("Sign up", new_user_registration_path, class: "btn btn-primary btn-lg") %>
+    </div>
+  </article>
+
+  <div class="spacer"></div>
+
 </div>

@@ -1,0 +1,29 @@
+$form-font: 'Open Sans', sans-serif;
+$w-clr: #FFF;
+
+// Welcome page
+div#welcome {
+  min-height: 750px;
+  background: url("/assets/bg-2.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  article { margin: 75px auto 300px auto; }
+
+  h1 {
+    padding: 25px;
+    font-family: $form-font;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+}
+
+
+// MEDIA Qs
+@media (max-width: 436px) {
+  div#welcome {
+    min-height: 610px;
+    article { margin: 75px auto 50px auto; }
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+}
