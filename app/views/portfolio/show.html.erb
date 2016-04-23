@@ -1,3 +1,5 @@
-<% stock_data = stock_info(@stock.to_a) %>
-<%= render '/stocks/stock', stock: stock_data.first %>
-<%= link_to "Back to your portfolio", portfolio_index_path %>
+<div id="stock-show" class="container-fluid">
+  <% stock_data = stock_info(@stock.to_a) %>
+  <%= render '/stocks/stock_show', stock: stock_data.first %>
+  <%= link_to "Back to your portfolio", portfolio_index_path %>
+</div>
