@@ -1,0 +1,325 @@
+/* line 7, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer {
+  background: #637e4e;
+  background: -moz-linear-gradient(-45deg, #637e4e 0%, #50a216 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #637e4e), color-stop(100%, #50a216));
+  background: -webkit-linear-gradient(-45deg, #637e4e 0%, #50a216 100%);
+  background: -o-linear-gradient(-45deg, #637e4e 0%, #50a216 100%);
+  background: -ms-linear-gradient(-45deg, #637e4e 0%, #50a216 100%);
+  background: linear-gradient(135deg, #637e4e 0%, #50a216 100%);
+}
+/* line 17, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #foot-logo {
+  margin-top: 32px;
+}
+/* line 19, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #foot-logo img {
+  background-color: #000;
+}
+/* line 24, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #foot-info {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+/* line 28, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #foot-info a {
+  color: #FFF;
+  text-decoration: none;
+}
+/* line 32, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #foot-info a:hover {
+  color: #688AFC;
+  -webkit-text-stroke-width: .5px;
+  -webkit-text-stroke-color: #000;
+}
+/* line 40, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #social {
+  margin-bottom: 35px;
+}
+/* line 43, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #social li a img {
+  width: 32px;
+  height: auto;
+}
+/* line 48, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/footer.scss */
+footer #social li a:hover img {
+  background-color: #688AFC;
+}
+/* line 6, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/homepage.scss */
+div#welcome {
+  min-height: 750px;
+  background: "/assets/bg-2-6d871426ed1dc133016ae5be3e7c5eb20eb52f86372486af3d6940b6e59c204d.jpg" no-repeat center center;
+  -webkit-background-size: cover;
+}
+/* line 10, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/homepage.scss */
+div#welcome article {
+  margin: 75px auto 300px auto;
+}
+/* line 12, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/homepage.scss */
+div#welcome h1 {
+  padding: 25px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  line-height: 1.5;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: #51A116;
+}
+
+@media (max-width: 436px) {
+  /* line 25, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/homepage.scss */
+  div#welcome {
+    min-height: 610px;
+  }
+  /* line 27, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/homepage.scss */
+  div#welcome article {
+    margin: 75px auto 50px auto;
+  }
+  /* line 28, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/homepage.scss */
+  div#welcome h1 {
+    font-size: 1.5em;
+  }
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+/* line 13, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+body.login-sign {
+  background-color: #51A116;
+}
+
+/* line 15, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login, div#sign-up {
+  background-color: #51A116;
+  font-family: "Open Sans", sans-serif;
+}
+/* line 19, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login .log-sign-header, div#sign-up .log-sign-header {
+  margin: 25px 0;
+}
+/* line 22, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login .log-sign-header h1, div#sign-up .log-sign-header h1 {
+  color: #FFF;
+  font-weight: 300;
+}
+/* line 28, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login div.sign-log-form, div#sign-up div.sign-log-form {
+  -webkit-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+  -web-kit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  max-width: 380px;
+  padding: 0 30px;
+  background-color: #FFF;
+}
+/* line 43, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login div.sign-log-form .logo img, div#sign-up div.sign-log-form .logo img {
+  margin: 0 auto;
+  display: block;
+  padding: 4.5em 0;
+}
+/* line 49, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login div.sign-log-form .actions input, div#sign-up div.sign-log-form .actions input {
+  height: 42px;
+  margin-bottom: 1em;
+}
+/* line 54, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+div#login div.sign-log-form .forgot, div#sign-up div.sign-log-form .forgot {
+  color: #51A116;
+  text-decoration: none;
+}
+
+/* line 61, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+#xtra-link {
+  margin-top: 30px;
+  margin-bottom: 150px;
+  font-weight: 400;
+}
+/* line 67, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+#xtra-link span.fade {
+  color: #FFF;
+  opacity: .6;
+  margin-right: 3px;
+}
+/* line 73, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+#xtra-link a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+@media (max-width: 436px) {
+  /* line 82, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+  div#login h1, div#sign-up h1 {
+    display: none;
+  }
+  /* line 86, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/login_signup.scss */
+  div#login div.sign-log-form, div#sign-up div.sign-log-form {
+    padding: 0 15px;
+  }
+}
+/* line 4, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/navigation.scss */
+.navspacer {
+  height: 50px;
+}
+
+/* line 10, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/navigation.scss */
+nav a#brand-logo img {
+  width: 55px;
+  height: auto;
+}
+
+/* line 17, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/navigation.scss */
+.navbar-inverse .navbar-nav > li > a {
+  color: #51A116 !important;
+}
+/* line 20, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/navigation.scss */
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #688AFC !important;
+}
+/* line 9, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/portfolio.scss */
+#main {
+  background-color: #131314;
+}
+
+/* line 11, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/portfolio.scss */
+#portfolio-title {
+  color: #688AFC;
+}
+
+/* line 13, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/portfolio.scss */
+#add-stock {
+  margin-bottom: 20px;
+}
+/* line 12, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show {
+  background-color: #1F2123;
+  padding-top: 25px;
+}
+/* line 16, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show a.glyphicon {
+  color: #688AFC;
+  text-decoration: none;
+  font-size: 32px;
+}
+/* line 21, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show a.glyphicon:hover {
+  color: red;
+}
+/* line 25, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show article span.mkt-price {
+  margin-right: 5px;
+  color: #688AFC;
+}
+/* line 30, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show article .market-header a {
+  color: #00AEEF;
+  text-decoration: none;
+}
+/* line 38, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show article #stock-data table tr td {
+  border: none;
+  padding: 2px;
+  font-size: 13px;
+}
+/* line 44, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stock_show.scss */
+#stock-show article #stock-data table tr td.text-muted + td {
+  color: #FFF;
+}
+/* line 16, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data {
+  margin: 3px;
+  background-color: #1F2123;
+}
+/* line 21, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data section.market-header .del-stock {
+  float: right;
+  padding: 3px;
+  text-decoration: none;
+  color: white;
+}
+/* line 27, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data section.market-header .del-stock:hover {
+  color: red;
+}
+/* line 30, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data section.market-header div h4 {
+  margin-top: 0;
+}
+/* line 34, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data section.market-header div h4 a {
+  text-decoration: none;
+  color: #00AEEF;
+}
+/* line 38, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data section.market-header div h4 a:hover {
+  color: red;
+}
+/* line 45, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data table tr td {
+  border: none;
+  padding: 2px;
+  font-size: 13px;
+}
+/* line 51, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data table tr td.text-muted + td {
+  color: white;
+}
+/* line 57, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+article.market-data .mkt-price {
+  margin-right: 5px;
+  color: #688AFC;
+}
+
+/* line 63, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+.spacer {
+  min-height: 150px;
+}
+
+@media screen and (max-width: 435px) {
+  /* line 68, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+  article.market-data {
+    margin-bottom: 15px;
+  }
+
+  /* line 72, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+  div.no-pad {
+    padding: 0;
+  }
+
+  /* line 73, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+  div.table-responsive {
+    border: none;
+  }
+}
+@media (min-width: 436px) and (max-width: 1280px) {
+  /* line 78, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+  #stocks-container {
+    padding-left: 15px;
+  }
+
+  /* line 80, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+  article.market-data {
+    max-width: 375px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  /* line 86, /Users/Pratik/Documents/Pratik/Work/yeeld/app/assets/stylesheets/stocks.scss */
+  article.market-data {
+    max-width: 400px;
+    margin: 3px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
