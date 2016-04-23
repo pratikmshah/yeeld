@@ -1,0 +1,51 @@
+// Variables
+$w-clr: #FFF;
+$backgrd-login: #51A116;
+$backgrd-form: $w-clr;
+$form-font: 'Open Sans', sans-serif;
+$site-clr: $backgrd-login;
+$stock-bx-clr: #1F2123;
+$stock-comp-clr: #00AEEF;
+$mkt-price: #688AFC;
+$r-clr: red;
+
+#stock-show {
+  background-color: $stock-bx-clr;
+  padding-top: 25px;
+
+  a.glyphicon {
+    color: $mkt-price;
+    text-decoration: none;
+    font-size: 32px;
+
+    &:hover { color: $r-clr; }
+  }
+
+  article {
+    span.mkt-price {
+      margin-right: 5px;
+      color: $mkt-price;
+    }
+
+    .market-header a {
+      color: $stock-comp-clr;
+      text-decoration: none;
+    }
+
+    #stock-data {
+      table {
+        tr {
+          td {
+            border: none;
+            padding: 2px;
+            font-size: 13px;
+          }
+
+          td.text-muted + td {
+            color: $w-clr;
+          }
+        }
+      }
+    }
+  }
+}
