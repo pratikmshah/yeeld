@@ -5,7 +5,7 @@ $site-clr: #51A116;
 // Welcome page
 div#welcome {
   min-height: 750px;
-  background: url("/assets/bg-2.jpg") no-repeat center center;
+  background: image-url("bg-2.jpg") no-repeat center center;
   -webkit-background-size: cover;
   article { margin: 75px auto 300px auto; }
 
