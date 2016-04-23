@@ -1,27 +1,28 @@
-<body id="main" class="container-fluid">
+<body id="main">
 
-<h1 id="portfolio-title" class="text-center">Your Portfolio</h1>
+  <h1 id="portfolio-title" class="text-center">Your Portfolio</h1>
 
-<div id="add-stock" class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-    <div class="form-inline text-center">
-      <%= form_for @stock do |f| %>
-        <div class="form-group text-center">
-          <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
-          <%= f.submit "Add stock", class: "form-control btn btn-success" %>
-        </div>
+  <div id="add-stock" class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="form-inline text-center">
+        <%= form_for @stock do |f| %>
+          <div class="form-group text-center">
+            <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
+            <%= f.submit "Add stock", class: "form-control btn btn-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid no-pad d">
+    <div id="stocks-container" class="col-xs-12 no-pad">
+      <% stock_data = stock_info(@portfolio) %>
+      <% stock_data.each do |data| %>
+        <%= render '/stocks/stock', stock: data %>
       <% end %>
     </div>
   </div>
-</div>
 
-<div class="container-fluid no-pad d">
-  <div id="stocks-container" class="col-xs-12 no-pad">
-    <% stock_data = stock_info(@portfolio) %>
-    <% stock_data.each do |data| %>
-      <%= render '/stocks/stock', stock: data %>
-    <% end %>
-  </div>
-</div>
-
+  <div class="spacer"></div>
 </body>
