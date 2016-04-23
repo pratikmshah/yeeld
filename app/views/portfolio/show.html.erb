@@ -1,5 +1,5 @@
 <div id="stock-show" class="container-fluid">
   <% stock_data = stock_info(@stock.to_a) %>
   <%= render '/stocks/stock_show', stock: stock_data.first %>
-  <%= link_to "Back to your portfolio", portfolio_index_path %>
+  <%= link_to "", portfolio_index_path, class: "glyphicon glyphicon-arrow-left", title: "Back to portfolio" %>
 </div>

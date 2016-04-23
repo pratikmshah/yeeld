@@ -2,9 +2,9 @@
 <article class="col-xs-12">
 
     <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
-    <section class="market-header">
+    <section>
       <div class="col-xs-12 no-pad">
-        <h4>
+        <h4 class="market-header">
           <%= link_to "#{stock.name}   (#{stock.symbol.upcase})", portfolio_path(stock_obj) %>
         </h4>
       </div>
