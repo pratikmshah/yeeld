@@ -9,8 +9,11 @@ $stock-comp-clr: #00AEEF;
 $mkt-price: #688AFC;
 $w-clr: white;
 $r-clr: red;
+$site-clr: #51A116;
 
 // Utility
+.fire { color: $r-clr; }
+.leaf { color: $site-clr; }
 
 // Stock Model
 article.market-data {
