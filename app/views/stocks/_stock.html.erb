@@ -2,6 +2,12 @@
 
     <% stock_obj = Stock.find_by(ticker: stock.symbol.upcase) %>
     <section class="market-header row">
+      <% if (stock.change[0] == '+' && stock.change_in_percent[1..4].to_f > 5) %>
+        <span class="glyphicon glyphicon-leaf leaf"></span>
+      <% end %>
+      <% if (stock.change[0] == '-' && stock.change_in_percent[1..4].to_f > 5) %>
+        <span class="glyphicon glyphicon-fire fire"></span>
+      <% end %>
       <%= link_to(" ", portfolio_path(stock_obj), method: :delete,
                                                   class: "del-stock glyphicon glyphicon-remove",
                                                   data: { confirm: "Delete #{stock.symbol.upcase} from portfolio?"}) %>
