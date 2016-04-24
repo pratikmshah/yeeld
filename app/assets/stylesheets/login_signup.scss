@@ -79,8 +79,13 @@ div#login, div#sign-up {
 // MEDIA Qs
 @media (max-width: 436px) {
   div#login, div#sign-up {
-    h1 {
-      display: none;
+
+    .log-sign-header {
+      margin: 10px 0;
+
+      h1 {
+        display: none;
+      }
     }
 
     div.sign-log-form {
