@@ -6,13 +6,14 @@ $dig-clr: #688AFC;
 
 footer {
   // footer background
-  background: rgba(99,126,78,1);
-  background: -moz-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(99,126,78,1)), color-stop(100%, rgba(80,162,22,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
-  background: linear-gradient(135deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
+  background-color: $b-clr;
+  // background: rgba(99,126,78,1);
+  // background: -moz-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
+  // background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(99,126,78,1)), color-stop(100%, rgba(80,162,22,1)));
+  // background: -webkit-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
+  // background: -o-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
+  // background: -ms-linear-gradient(-45deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
+  // background: linear-gradient(135deg, rgba(99,126,78,1) 0%, rgba(80,162,22,1) 100%);
 
   #foot-logo {
     margin-top: 32px;
@@ -43,10 +44,11 @@ footer {
     li a img {
       width: 32px;
       height: auto;
+      background-color: $b-clr;
     }
 
     li a:hover img {
-      background-color: $dig-clr;
+      box-shadow: 1px solid red;
     }
   }
 }
