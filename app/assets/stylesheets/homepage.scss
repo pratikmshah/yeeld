@@ -1,21 +1,50 @@
 $form-font: 'Open Sans', sans-serif;
 $w-clr: #FFF;
+$b-clr: #000;
 $site-clr: #51A116;
+$dig-clr: #688AFC;
 
 // Welcome page
 div#welcome {
   min-height: 750px;
-  background: image-url("bg-2.jpg") no-repeat center center;
-  -webkit-background-size: cover;
+  //background: image-url("bg-2.jpg") no-repeat center center;
+  //-webkit-background-size: cover;
+  background: rgba(41,106,212,1);
+  background: -moz-linear-gradient(left, rgba(41,106,212,1) 0%, rgba(78,142,247,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(41,106,212,1)), color-stop(100%, rgba(78,142,247,1)));
+  background: -webkit-linear-gradient(left, rgba(41,106,212,1) 0%, rgba(78,142,247,1) 100%);
+  background: -o-linear-gradient(left, rgba(41,106,212,1) 0%, rgba(78,142,247,1) 100%);
+  background: -ms-linear-gradient(left, rgba(41,106,212,1) 0%, rgba(78,142,247,1) 100%);
+  background: linear-gradient(to right, rgba(41,106,212,1) 0%, rgba(78,142,247,1) 100%);
   article { margin: 75px auto 300px auto; }
 
   h1 {
     padding: 25px;
     font-family: $form-font;
-    font-weight: 700;
+    font-weight: 300;
     line-height: 1.5;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: $site-clr;
+    color: $w-clr;
+  }
+
+  .log-btn {
+    -webkit-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+         box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0px rgba(0, 0, 0, 0.19);
+    background-color: $w-clr;
+    padding: 15px 32px;
+    color: $b-clr;
+    border-radius: 3px;
+    border: 3px solid $w-clr;
+  }
+
+  .sign-btn {
+    @extend .log-btn;
+    margin-left: 15px;
+    background: transparent;
+    color: $w-clr;
+    opacity: .6;
+
+    &:hover { opacity: 1; }
   }
 }
 
@@ -29,4 +58,8 @@ div#welcome {
       font-size: 1.5em;
     }
   }
+}
+
+@media (max-width: 320px) {
+  .log-btn { padding: 15px 25px; }
 }
