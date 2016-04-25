@@ -7,7 +7,7 @@ $dig-clr: #688AFC;
 // Welcome page
 div#welcome {
   min-height: 750px;
-  //background: image-url("bg-2.jpg") no-repeat center center;
+  background: image-url("chart.png") no-repeat center center;
   //-webkit-background-size: cover;
   background: rgba(41,106,212,1);
   background: -moz-linear-gradient(left, rgba(41,106,212,1) 0%, rgba(78,142,247,1) 100%);
@@ -46,6 +46,14 @@ div#welcome {
 
     &:hover { opacity: 1; }
   }
+
+  #demo img {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 55%;
+    height: auto;
+    border: 8px solid rgba(255,255,255,0.1);
+  }
 }
 
 
@@ -54,8 +62,14 @@ div#welcome {
   div#welcome {
     min-height: 610px;
     article { margin: 75px auto 50px auto; }
+
     h1 {
       font-size: 1.5em;
+    }
+
+    #demo img {
+      width: 100%;
+      margin-bottom: 0;
     }
   }
 }
