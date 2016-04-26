@@ -20,7 +20,7 @@ module StocksHelper
 
   #  return chart options - temporary hardcoded
   def chart_options
-    { library: { backgroundColor: "#212427", color: "#7CB5EC"} }
+    { backgroundColor: "#212427", color: "#7CB5EC" }
   end
 
   # return chart data
@@ -62,5 +62,13 @@ module StocksHelper
   # convert arrays to date => price hash
   def parse_chart_data(dates, prices)
     dates.zip(prices).to_h
+  end
+
+  def price_high(hash)
+    hash.max_by{|k,v| v.to_i}[1].to_i
+  end
+
+  def price_low(hash)
+    hash.min_by{|k,v| v.to_i}[1].to_i
   end
 end
