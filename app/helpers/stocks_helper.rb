@@ -23,7 +23,6 @@ module StocksHelper
     { library: { backgroundColor: "#212427", color: "#7CB5EC"} }
   end
 
-
   # return chart data
   def chart_data(ticker)
     data = stock_historical_data(ticker)

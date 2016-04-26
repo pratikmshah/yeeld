@@ -1,2 +1,4 @@
-<% chart_data = chart_data(stock.ticker) %>
-<%= line_chart chart_data, chart_options %> <!-- need to move options -->
+<section class="col-xs-12">
+  <% data = chart_data(stock.symbol) %>
+  <%= line_chart data, chart_options %>
+</section>
