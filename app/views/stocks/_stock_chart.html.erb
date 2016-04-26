@@ -1,4 +1,4 @@
-<section class="col-xs-12">
+<section class="col-xs-12 stock-chart">
   <% data = chart_data(stock) %>
   <%= line_chart data, min: price_low(data), max: price_high(data), height: "200px", library: chart_options %>
 </section>

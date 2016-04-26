@@ -61,6 +61,8 @@ article.market-data {
     margin-right: 5px;
     color: $mkt-price;
   }
+
+  section.stock-chart { padding-bottom: 10px; }
 }
 
 .spacer { min-height: 150px; }
@@ -69,6 +71,7 @@ article.market-data {
 // MEDIA Qs
 @media screen and (max-width: 435px) {
   article.market-data {
+    margin: 0px;
     margin-bottom: 15px;
   }
 
