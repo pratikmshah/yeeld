@@ -20,7 +20,7 @@ module StocksHelper
 
   #  return chart options
   def chart_options
-    { backgroundColor: "#212427", colors: ["#688AFC", "#999"] }
+    { backgroundColor: "#212427", colors: ["#688AFC", "#999"], crosshair: { trigger: 'both' }, legend: 'none' }
   end
 
   # return chart data
