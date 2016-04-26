@@ -14,14 +14,15 @@ module StocksHelper
   end
 
   # returns historical stock data for over a year
-  def stock_historical_info(ticker, days)
-    YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - days, end_date: Date.today })
+  def stock_historical_data(ticker)
+    YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - 90, end_date: Date.today })
   end
 
-  # returns historical stock data for over a year
-  def stock_historical_data(ticker)
-    YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - 365, end_date: Date.today })
+  #  return chart options - temporary hardcoded
+  def chart_options
+    { library: { backgroundColor: "#212427", color: "#7CB5EC"} }
   end
+
 
   # return chart data
   def chart_data(ticker)
