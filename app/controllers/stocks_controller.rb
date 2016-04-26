@@ -28,7 +28,6 @@ class StocksController < ApplicationController
         # check to see if user already has in portfolio
         if stock_in_portfolio?(user, stock)
           flash[:notice] = "Stock already exists in your portfolio."
-          portfolio_index
           redirect_to portfolio_index_path
         else
           add_stock = UserStock.new(user_id: user.id, stock_id: stock.id)   # create new record in join table
