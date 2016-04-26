@@ -49,3 +49,12 @@ $r-clr: red;
     }
   }
 }
+
+// MEDIA Qs
+@media (max-width: 436px) {
+  #chart-1 { height: 200px; }
+}
+
+@media (min-width: 1200px) {
+  #market-value { max-width: 300px; }
+}
