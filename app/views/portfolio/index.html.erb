@@ -20,7 +20,6 @@
       <% stock_data = stock_info(@portfolio) %>
       <% stock_data.each do |data| %>
         <%= render '/stocks/stock', stock: data %>
-        <%= render '/stocks/stock_chart', stock: data %>
       <% end %>
     </div>
   </div>
