@@ -9,6 +9,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'yahoo-finance'
 gem "stock_quote"
+gem 'chartkick'
+gem 'groupdate'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
