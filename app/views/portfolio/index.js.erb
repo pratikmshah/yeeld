@@ -1,3 +1,9 @@
-$parent = $('#stocks-container'); // grab parent to append to
-$('#stocks-container').remove();  // remove contents
-$parent.append( <%= j render 'portfolio', portfolio: @portfolio %> ); // render partial
+$parent = $('#stocks-container').parent();            // grab parent to append to
+$refresh = $('#refresh');
+
+$('#stocks-container').remove();                      // remove contents
+$refresh.addClass('gly-spin').delay(2000).queue(function() {
+  $refresh.removeClass('gly-spin');
+  $refresh.dequeue();
+}, 1000);
+$parent.append( '<%= j render "portfolio", portfolio: @portfolio %>' );
