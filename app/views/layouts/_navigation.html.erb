@@ -24,6 +24,7 @@
                 <% else %>
                 <li> <%= link_to("", portfolio_path(params[:id]), title: "Refresh Page", class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
               <% end %>
+             <li> <a href="#" class="navi-btn glyphicon glyphicon-trash"></a> </li>
             <% else %>
               <li> <%= link_to("Login", new_user_session_path) %> </li>
               <li> <%= link_to("Sign up", new_user_registration_path) %> </li>
