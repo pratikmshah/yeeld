@@ -18,7 +18,12 @@
 
           <ul class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-             <li> <%= link_to("", destroy_user_session_path, method: :delete, id: "logout", class: "glyphicon glyphicon-log-out") %> </li>
+             <li> <%= link_to("", destroy_user_session_path, method: :delete, title: "Logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
+              <% if @portfolio %>
+                <li> <%= link_to("", portfolio_index_path, title: "Refresh Page", class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
+                <% else %>
+                <li> <%= link_to("", portfolio_path(params[:id]), title: "Refresh Page", class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
+              <% end %>
             <% else %>
               <li> <%= link_to("Login", new_user_session_path) %> </li>
               <li> <%= link_to("Sign up", new_user_registration_path) %> </li>
