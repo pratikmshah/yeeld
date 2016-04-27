@@ -1,5 +1,3 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
 $(function(){
 
   // ===============================================ADD STOCK FORM
@@ -23,10 +21,12 @@ $(function(){
 
 
   // =======================================DELETE STOCK BUTTON
-  $('.del-stock').toggle();
+  var $deleteStock = $('.del-stock');
+  $deleteStock.toggle();
 
+  // display delete buttons on all stocks
   $('#main').on('click', 'a#delete', function(e){
-    $('.del-stock').toggle();
+    $deleteStock.toggle();
     e.preventDefault();
   });
 
