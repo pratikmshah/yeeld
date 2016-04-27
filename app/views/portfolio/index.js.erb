@@ -1,0 +1,3 @@
+$parent = $('#stocks-container'); // grab parent to append to
+$('#stocks-container').remove();  // remove contents
+$parent.append( <%= j render 'portfolio', portfolio: @portfolio %> ); // render partial

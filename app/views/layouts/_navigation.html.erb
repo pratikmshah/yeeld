@@ -25,7 +25,7 @@
                                                            class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
                 <% else %>
                 <li> <%= link_to("", portfolio_path(params[:id]), title: "Refresh Page", id: "refresh",
-                                                                  class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
+                                                                  class: "navi-btn glyphicon glyphicon-refresh") %> </li>
               <% end %>
              <li> <a href="#" title="Remove stock from portfolio", id="delete", class="navi-btn glyphicon glyphicon-trash"></a> </li>
              <li> <a href="#" title="Watchlist - Coming Soon!" id="spy", class="navi-btn glyphicon glyphicon-eye-open"></a> </li>

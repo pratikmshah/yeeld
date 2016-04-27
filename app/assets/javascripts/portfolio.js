@@ -26,7 +26,7 @@ $(function(){
 
   // display delete buttons on all stocks
   $('#main').on('click', 'a#delete', function(e){
-    $deleteStock.toggle();
+    $deleteStock.toggle('slow');
     e.preventDefault();
   });
 
