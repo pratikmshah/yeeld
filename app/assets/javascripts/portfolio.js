@@ -2,6 +2,7 @@
 // All this logic will automatically be available in application.js.
 $(function(){
 
+  // ===============================================ADD STOCK FORM
   // set submit button to be disabled initialially
   var $stock_add_btn = $("#add-stock input:last");
   var $add_stock_val = '';
@@ -18,6 +19,15 @@ $(function(){
       $stock_add_btn.attr('disabled', true);
     }
 
+  });
+
+
+  // =======================================DELETE STOCK BUTTON
+  $('.del-stock').toggle();
+
+  $('#main').on('click', 'a#delete', function(e){
+    $('.del-stock').toggle();
+    e.preventDefault();
   });
 
 });
