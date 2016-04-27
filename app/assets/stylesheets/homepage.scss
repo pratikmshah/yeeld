@@ -54,6 +54,13 @@ div#welcome {
   }
 }
 
+// carousel fix for larger screens
+.carousel {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: block;
+}
+
 
 // MEDIA Qs
 @media (max-width: 436px) {
