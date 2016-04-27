@@ -1,0 +1,6 @@
+<div id="stocks-container" class="col-xs-12 no-pad">
+  <% stock_data = stock_info(@portfolio) %>
+  <% stock_data.each do |data| %>
+    <%= render '/stocks/stock', stock: data %>
+  <% end %>
+</div>

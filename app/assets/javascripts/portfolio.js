@@ -1,7 +1,6 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
 $(function(){
 
+  // ===============================================ADD STOCK FORM
   // set submit button to be disabled initialially
   var $stock_add_btn = $("#add-stock input:last");
   var $add_stock_val = '';
@@ -18,6 +17,17 @@ $(function(){
       $stock_add_btn.attr('disabled', true);
     }
 
+  });
+
+
+  // =======================================DELETE STOCK BUTTON
+  var $deleteStock = $('.del-stock');
+  $deleteStock.toggle();
+
+  // display delete buttons on all stocks
+  $('#main').on('click', 'a#delete', function(e){
+    $deleteStock.toggle('slow');
+    e.preventDefault();
   });
 
 });
