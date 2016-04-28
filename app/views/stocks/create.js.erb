@@ -1,0 +1,2 @@
+<% new_stock = stock_info( [Stock.find(@add_stock.stock_id).ticker] ) %>
+$('#stocks-container').append('<%= j render "/stocks/stock", stock: new_stock.first %>')
