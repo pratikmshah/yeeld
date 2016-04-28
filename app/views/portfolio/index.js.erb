@@ -1,8 +1,8 @@
-$parent = $('#stocks-container').parent();            // grab parent to append to
+$parent = $('#stocks-container').parent();                    // grab parent to append to
 $refresh = $('#refresh');
 
-$('#stocks-container').remove();                      // remove contents
-$refresh.addClass('gly-spin').delay(2000).queue(function() {
+$('#stocks-container').remove();                              // remove contents
+$refresh.addClass('gly-spin').delay(1500).queue(function() {  // animation
   $refresh.removeClass('gly-spin');
   $refresh.dequeue();
 }, 1000);
