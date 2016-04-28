@@ -7,3 +7,4 @@ $refresh.addClass('gly-spin').delay(2000).queue(function() {
   $refresh.dequeue();
 }, 1000);
 $parent.append( '<%= j render "portfolio", portfolio: @portfolio %>' );
+$('.del-stock').toggle();
