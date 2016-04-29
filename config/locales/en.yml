@@ -22,6 +22,7 @@
 en:
   hello: "Hello world"
   number_units:
+    ten:     "<T"
     thousand: "T"
     million:  "M"
     billion:  "B"
