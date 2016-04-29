@@ -57,13 +57,13 @@
               <td class="text-muted" title="Opening price of the day">Open</td>
               <td><%= stock.open %></td>
               <td class="text-muted" title="Total outstanding shares of the company">Shares</td>
-              <td><%= number_to_human(stock.float_shares) %></td>
+              <td><%= number_to_human(stock.float_shares, units: :number_units) %></td>
             </tr>
             <tr>
               <td class="text-muted" title="Vol - number of shares traded in current session. Average volume is measured over 30 days">Vol/Avg.</td>
               <td>
-                <%= number_to_human(stock.volume) %> /
-                <%= number_to_human(stock.average_daily_volume) %>
+                <%= number_to_human(stock.volume, units: :number_units) %> /
+                <%= number_to_human(stock.average_daily_volume, units: :number_units) %>
               </td>
               <td class="text-muted" title="Earnings before interest, taxes, depreciation, and amortization">EBITDA</td>
               <td><%= stock.ebitda %></td>
