@@ -1,5 +1,5 @@
 <section class="col-xs-12 stock-chart">
   <% data = chart_data(stock, days ||= 90) %>
-  <%= line_chart data, xtitle: "Price", min: price_low(data) - 1, max: price_high(data) + 1,
-                       height: chart_height, library: chart_options %>
+  <%= line_chart data, id: "chart-#{stock}", xtitle: "Price", min: price_low(data) - 1, max: price_high(data) + 1,
+                       height: chart_height, library: chart_options(stock) %>
 </section>
