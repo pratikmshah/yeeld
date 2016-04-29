@@ -21,12 +21,11 @@ $(function(){
 
 
   // =======================================DELETE STOCK BUTTON
-  var $deleteStock = $('.del-stock');
-  $deleteStock.toggle();
+  $('.del-stock').toggle();
 
   // display delete buttons on all stocks
   $('#main').on('click', 'a#delete', function(e){
-    $deleteStock.toggle('slow');
+    $('.del-stock').toggle('slow');
     e.preventDefault();
   });
 

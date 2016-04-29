@@ -10,12 +10,10 @@ class StocksController < ApplicationController
       # check to see if user already has in portfolio
       if stock_in_portfolio?(user, stock)
         flash[:notice] = "Stock already exists in your portfolio."
-        redirect_to portfolio_index_path
       else
-        add_stock = UserStock.new(user_id: user.id, stock_id: stock.id)   # create new record in join table
-        add_stock.save
+        @add_stock = UserStock.new(user_id: user.id, stock_id: stock.id)   # create new record in join table
+        @add_stock.save
         flash[:notice] = "Stock has been added to your portfolio."
-        redirect_to portfolio_index_path
       end
 
     else
@@ -28,19 +26,21 @@ class StocksController < ApplicationController
         # check to see if user already has in portfolio
         if stock_in_portfolio?(user, stock)
           flash[:notice] = "Stock already exists in your portfolio."
-          redirect_to portfolio_index_path
         else
-          add_stock = UserStock.new(user_id: user.id, stock_id: stock.id)   # create new record in join table
-          add_stock.save
+          @add_stock = UserStock.new(user_id: user.id, stock_id: stock.id)   # create new record in join table
+          @add_stock.save
           flash[:notice] = "Stock has been added to your portfolio."
-          redirect_to portfolio_index_path
         end
 
       else
         # if not in api return back with error msg
         flash[:notice] = "Stock was not found."
-        redirect_to portfolio_index_path
       end
+    end
+
+    respond_to do |format|
+     format.html { redirect_to portfolio_index_path }
+     format.js
     end
   end
 
