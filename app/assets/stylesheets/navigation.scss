@@ -61,3 +61,17 @@ nav {
     color: $dig-clr !important;
   }
 }
+
+// add stock form
+#add-stock {
+  margin-bottom: 20px;
+
+  #stock_ticker {
+    background-color: $nav-clr;
+    border-color: $nav-clr;
+
+    &:focus {
+      background-color: $w-clr;
+    }
+  }
+}
