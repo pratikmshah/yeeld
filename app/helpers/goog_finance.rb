@@ -14,8 +14,9 @@ module GoogFinance
   def company_summary(symbol)
     data = { summary: '', rlink: '' }
     html = Nokogiri::HTML(open("#{QUOTE_URL}#{symbol.upcase}"))
-    data[:summary] = html.css(COMPANY_DESC_SELECTOR).first.text
-    data[:rlink] = html.css(REUTER_LINK).first.attr('href')
+    data[:summary] = html.css(COMPANY_DESC_SELECTOR).first.text   # grab description
+    data[:rlink] = html.css(REUTER_LINK).first.attr('href')       # grab reuters link
+    format_descript(data)                                         # format link
     return data
   end
 
@@ -51,4 +52,10 @@ module GoogFinance
       arr.map { |link| link.attr('href') }
     end
 
+    # format description and return hash
+    def format_descript(data)
+      data[:summary] = remove_escape([data[:summary]]).first   # format description to get rid of \n
+      data[:summary].slice!('More from Reuters »')             # remove More from Reuters »
+      data[:rlink] = "https:#{data[:rlink]}"                   # append https to link
+    end
 end
