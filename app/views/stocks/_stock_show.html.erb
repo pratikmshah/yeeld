@@ -72,5 +72,30 @@
 
     <%= render '/stocks/stock_chart', stock: stock.symbol, chart_height: "500px", days: 356 %>
 
+    <section id="company-info" class="col-sm-8 col-sm-offset-2 col-xs-12 text-muted">
+      <h4>About <%= stock.name %></h4>
+      <p>
+        <% company_info = company_summary(stock.symbol) %>
+        <%= company_info[:summary] %>
+        <a href="<%= company_info[:rlink] %>" target="_blank">More information from Reuters.</a>
+      </p>
+    </section>
+
+    <section id="company-news" class="col-sm-8 col-sm-offset-2 col-xs-12 text-muted">
+      <h4>Current Headlines</h4>
+      <% current_news = company_news(stock.symbol) %>
+      <ul class="list-unstyled">
+        <% current_news.each do |article| %>
+          <li>
+            <div>
+              <a href="<%= article[1] %>" target="_blank"><%= article[0] %></a><br>
+              <small><%= article[2] %></small>
+              <p><%= article[3] %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </section>
+
 </article>
 </div>
