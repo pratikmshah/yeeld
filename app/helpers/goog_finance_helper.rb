@@ -1,4 +1,4 @@
-module GoogFinance
+module GoogFinanceHelper
 
   # Company description
   QUOTE_URL = 'https://www.google.com/finance?q='
