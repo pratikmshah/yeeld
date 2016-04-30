@@ -23,10 +23,10 @@ module GoogFinanceHelper
   def company_news(symbol)
     data = []
     html = Nokogiri::HTML(open("#{NEWS_URL}#{symbol.upcase}"))
-    data.push(info_to_array(html.css(NEWS_LINKS_SELECTOR)))       # push headline to array
-    data.push(parse_urls(html.css(NEWS_LINKS_SELECTOR)))          # push url links to array
-    data.push(info_to_array(html.css(NEWS_SRC_SELECTOR)))         # push source text to array
-    data.push(info_to_array(html.css(NEWS_EXCERPT_SELECTOR)))     # push news excerpt text to array
+    data.push(info_to_array(html.css(NEWS_LINKS_SELECTOR)))       # push headline to array - 0
+    data.push(parse_urls(html.css(NEWS_LINKS_SELECTOR)))          # push url links to array - 1
+    data.push(info_to_array(html.css(NEWS_SRC_SELECTOR)))         # push source text to array - 2
+    data.push(info_to_array(html.css(NEWS_EXCERPT_SELECTOR)))     # push news excerpt text to array - 3
     return data.transpose
   end
 

@@ -40,8 +40,21 @@
     }
 
     #company-info {
-      p {
+      h4 { text-decoration: underline; }
+      a { color: $dig-clr; }
+    }
 
+    #company-news {
+      h4 { text-decoration: underline; }
+
+      ul {
+        max-height: 300px;
+        overflow: scroll;
+
+        li div {
+          a { color: $dig-clr; }
+          small { color: $w-clr; }
+        }
       }
     }
   }
