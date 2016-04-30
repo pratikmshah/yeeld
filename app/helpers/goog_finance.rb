@@ -7,8 +7,7 @@ module GoogFinance
 
   # Company news articles
   NEWS_URL = 'https://www.google.com/finance/company_news?q='
-  NEWS_TITLE_SELECTOR = 'div#news-main div.news span.name'      # returns title of the article
-  NEWS_LINKS_SELECTOR = 'div#news-main div.news span.name a'    # returns the url link of article
+  NEWS_LINKS_SELECTOR = 'div#news-main div.news span.name a'    # returns the title and url link of article
   NEWS_SRC_SELECTOR   = 'div#news-main div.news div.byline'     # returns src of article ex: Daily Mail - Apr 15, 2015
 
   def company_summary(symbol)
@@ -22,8 +21,15 @@ module GoogFinance
   def company_news(symbol)
     data = []
     html = Nokogiri::HTML(open("#{NEWS_URL}#{symbol.upcase}"))
-    data.push(info_to_array(html.css(NEWS_SRC_SELECTOR)))
+    data.push(info_to_array(html.css(NEWS_LINKS_SELECTOR)))                   # push headline to array
+    data.push(parse_urls(html.css(NEWS_LINKS_SELECTOR)))                      # push url links to array
+    data.push(info_to_array(html.css(NEWS_SRC_SELECTOR)))                     # push source text to array
     return data
+  end
+
+  def test(symbol)
+    html = Nokogiri::HTML(open("#{NEWS_URL}#{symbol.upcase}"))
+    parse_urls(html.css(NEWS_LINKS_SELECTOR))
   end
 
   private
@@ -36,13 +42,16 @@ module GoogFinance
     # remove new line (\n) escape character
     def remove_escape(arr)
       arr.each do |str|
-        if str
-          check = ''
-          while check != nil do
-           check = str.slice!("\n")
-          end
+        check = ''
+        while check != nil do
+         check = str.slice!("\n")
         end
       end
+    end
+
+    # parse url links
+    def parse_urls(arr)
+      arr.map { |link| link.attr('href') }
     end
 
 end
