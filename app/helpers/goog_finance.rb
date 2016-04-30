@@ -23,6 +23,7 @@ module GoogFinance
     data = []
     html = Nokogiri::HTML(open("#{NEWS_URL}#{symbol.upcase}"))
     data.push(info_to_array(html.css(NEWS_SRC_SELECTOR)))
+    return data
   end
 
   private
@@ -35,9 +36,11 @@ module GoogFinance
     # remove new line (\n) escape character
     def remove_escape(arr)
       arr.each do |str|
-        check = ''
-        while check != nil do
-          str.slice!("\n")
+        if str
+          check = ''
+          while check != nil do
+           check = str.slice!("\n")
+          end
         end
       end
     end
