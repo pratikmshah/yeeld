@@ -20,7 +20,7 @@ module GoogFinanceHelper
      data[:rlink] = html.css(REUTER_LINK).first.attr('href')      # grab reuters link
      format_descript(data)                                        # format link
     else
-      data[:summary] = "No description found (try Google)"
+      data[:summary] = "No description found. "
       data[:rlink] = "https://www.google.com/webhp?hl=en#hl=en&q="
     end
     return data
