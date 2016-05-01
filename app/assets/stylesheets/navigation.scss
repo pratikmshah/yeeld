@@ -47,8 +47,11 @@ nav {
 
   a#brand-logo {
     img {
-      width: 55px;
+      width: 75px;
       height: auto;
+      padding: 0;
+      padding-left: 15px;
+      padding-top: 8px;
     }
   }
 }
@@ -62,6 +65,8 @@ nav {
   &:hover {
     color: $dig-clr !important;
   }
+
+  span { font-size: 1.15em; }
 }
 
 .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a {
