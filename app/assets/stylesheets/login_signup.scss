@@ -1,13 +1,5 @@
 // CSS for Login and Sign up page
 @import 'variables';
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
-
-// Variables
-$w-clr: #FFF;
-$backgrd-login: #51A116;
-$backgrd-form: $w-clr;
-$form-font: 'Open Sans', sans-serif;
-$site-clr: $backgrd-login;
 
 // LOGIN PAGE & SIGN UP PAGE
 body.login-sign { background-color: $site-clr; }

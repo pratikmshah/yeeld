@@ -1,5 +1,5 @@
 $parent = $('#stocks-container').parent();                    // grab parent to append to
-$refresh = $('#refresh');
+$refresh = $('#refresh span.glyphicon-refresh');
 
 $('#stocks-container').remove();                              // remove contents
 $refresh.addClass('gly-spin').delay(1500).queue(function() {  // animation

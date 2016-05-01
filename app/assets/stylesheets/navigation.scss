@@ -1,6 +1,5 @@
 @import 'variables';
 
-.navi-btn { font-size: 1.5em; }
 .navspacer { height: 50px; }
 .gly-spin {
   -webkit-animation: spin 2s infinite linear;
@@ -48,23 +47,43 @@ nav {
 
   a#brand-logo {
     img {
-      width: 55px;
+      width: 75px;
       height: auto;
+      padding: 0;
+      padding-left: 15px;
+      padding-top: 8px;
     }
   }
 }
 
-.navbar-inverse .navbar-nav>li>a {
+// for navigation icons
+.nav-btn {
+  font-size: 1.5em;
+  padding: 10px;
   color: $site-clr !important;
 
   &:hover {
+    border-bottom: 2px solid $dig-clr;
     color: $dig-clr !important;
   }
+
+  span { font-size: 1.15em; }
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a {
+  @extend .nav-btn
+}
+
+// for login and signup on homepage to fix height align with brand logo
+.reset-fnt {
+  font-size: 1em !important;
+  padding-top: 15px !important;
 }
 
 // add stock form
 #add-stock {
-  margin-bottom: 20px;
+
+  padding: 15px;
 
   #stock_ticker {
     background-color: $nav-clr;
@@ -74,4 +93,34 @@ nav {
       background-color: $w-clr;
     }
   }
+
+  input:last-child { width: 100% }
+}
+
+// right side menu of navbar
+ul#navbar-r {
+
+  ul.dropdown-menu {
+    border: 1px solid $b-clr;
+    background-color: $b-clr;
+    font-size: 1.5em;
+
+    li {
+      margin-top: 7px;
+
+      a {
+        color: $site-clr;
+
+        &:hover {
+          background-color: $b-clr;
+          color: $dig-clr;
+        }
+      }
+    }
+  }
+}
+
+// make dropdown menu auto expand on hover
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
