@@ -14,9 +14,15 @@ module GoogFinanceHelper
   def company_summary(symbol)
     data = { summary: '', rlink: '' }
     html = Nokogiri::HTML(open("#{QUOTE_URL}#{symbol.upcase}"))
-    data[:summary] = html.css(COMPANY_DESC_SELECTOR).first.text   # grab description
-    data[:rlink] = html.css(REUTER_LINK).first.attr('href')       # grab reuters link
-    format_descript(data)                                         # format link
+    data[:summary] = html.css(COMPANY_DESC_SELECTOR)              # grab description
+    if data[:summary].length > 0                                  # check to see there is a description
+     data[:summary] = data[:summary].first.text                   # store the text into summary
+     data[:rlink] = html.css(REUTER_LINK).first.attr('href')      # grab reuters link
+     format_descript(data)                                        # format link
+    else
+      data[:summary] = "No description found (try Google)"
+      data[:rlink] = "https://www.google.com/webhp?hl=en#hl=en&q="
+    end
     return data
   end
 
