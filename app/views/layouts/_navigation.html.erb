@@ -35,16 +35,28 @@
                   <li role="separator" class="divider"></li>
                 <% end %>
                 <% if @portfolio %>
-                  <li> <%= link_to(" Refresh", portfolio_index_path, id: "refresh",
-                                                    class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
-                  <% else %>
-                  <li> <%= link_to(" Refresh", portfolio_path(params[:id]), id: "refresh",
-                                                    class: "navi-btn glyphicon glyphicon-refresh") %> </li>
+                  <li> <%= link_to(portfolio_index_path, id: "refresh",
+                                                    class: "navi-btn", remote: true) do %>
+                                                    <span class="glyphicon glyphicon-refresh"></span>
+                                                    <span>Refresh</span>
+                                                    <% end %></li>
+                <% else %>
+                  <li> <%= link_to(portfolio_path(params[:id]), id: "refresh",
+                                                    class: "navi-btn") do %>
+                                                    <span class="glyphicon glyphicon-refresh"></span>
+                                                    <span>Refresh</span>
+                                                    <% end %></li>
                 <% end %>
-               <li> <a href="#" title="Remove stock from portfolio", id="delete", class="navi-btn glyphicon glyphicon-trash"> Delete</a> </li>
+               <li> <a href="#" title="Remove stock from portfolio", id="delete", class="navi-btn">
+                                                    <span class="glyphicon glyphicon-trash"></span>
+                                                    <span>Delete</span></a> </li>
+
                <li role="separator" class="divider"></li>
-               <li> <%= link_to(" Logout", destroy_user_session_path, method: :delete,
-                                                    id: "logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
+               <li> <%= link_to(destroy_user_session_path, method: :delete,
+                                                    id: "logout", class: "navi-btn") do %>
+                                                    <span class="glyphicon glyphicon-menu-right"></span>
+                                                    <span>Logout</span>
+                                                    <% end %></li>
              </ul>
             </li>
              <li> <a href="#" title="Watchlist - Coming Soon!" id="spy", class="navi-btn">

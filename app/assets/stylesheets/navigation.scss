@@ -63,6 +63,7 @@ nav {
   color: $site-clr !important;
 
   &:hover {
+    border-bottom: 2px solid $dig-clr;
     color: $dig-clr !important;
   }
 
@@ -73,8 +74,11 @@ nav {
   @extend .nav-btn
 }
 
-// for login and signup on homepage
-.reset-fnt { font-size: 1em !important }
+// for login and signup on homepage to fix height align with brand logo
+.reset-fnt {
+  font-size: 1em !important;
+  padding-top: 15px !important;
+}
 
 // add stock form
 #add-stock {
@@ -97,6 +101,7 @@ nav {
 ul#navbar-r {
 
   ul.dropdown-menu {
+    border: 1px solid $b-clr;
     background-color: $b-clr;
     font-size: 1.5em;
 
@@ -113,4 +118,9 @@ ul#navbar-r {
       }
     }
   }
+}
+
+// make dropdown menu auto expand on hover
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
