@@ -74,10 +74,10 @@
               <td class="text-muted" title="Alerts with icons if stock moves or dips">Special Alerts</td>
               <td>
                 <% if (stock.change[0] == '+' && stock.change_in_percent[1..4].to_f > 5) %>
-                  <span class="glyphicon glyphicon-leaf leaf" title="stock is down!"></span>
+                  <span class="glyphicon glyphicon-leaf leaf" title="stock is up!"></span>
                 <% end %>
                 <% if (stock.change[0] == '-' && stock.change_in_percent[1..4].to_f > 5) %>
-                  <span class="glyphicon glyphicon-fire fire" title="stock is up!"></span>
+                  <span class="glyphicon glyphicon-fire fire" title="stock is down!"></span>
                 <% end %>
               </td>
             </tr>
