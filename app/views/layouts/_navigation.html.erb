@@ -16,33 +16,40 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-          <ul class="nav navbar-nav navbar-right">
+          <ul id="navbar-r" class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
-              <li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle navi-btn glyphicon glyphicon-menu-hamburger" data-toggle="dropdown"
+                                                      role="button" aria-haspopup="true" aria-expanded="false"></a>
+              <ul class="dropdown-menu">
                 <% if flash[:hide_form] == false %>
-                  <%= form_for(@stock, remote: true, html: { class: "navbar-form navbar-right", role: "add stock" }) do |f| %>
-                    <div id="add-stock" class="form-group">
-                      <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
-                      <%= f.submit "Add stock", class: "btn btn-success form-control" %>
-                    </div>
-                  <% end %>
+                  <li>
+                      <%= form_for(@stock, remote: true, html: { class: "navbar-form navbar-right no-marg", role: "add stock" }) do |f| %>
+                        <div id="add-stock" class="form-group">
+                          <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
+                          <%= f.submit "Add stock", class: "btn btn-success form-control" %>
+                        </div>
+                      <% end %>
+                  </li>
+                  <li role="separator" class="divider"></li>
                 <% end %>
-              </li>
-             <li> <%= link_to("", destroy_user_session_path, method: :delete, title: "Logout",
-                                                             id: "logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
-              <% if @portfolio %>
-                <li> <%= link_to("", portfolio_index_path, title: "Refresh Page", id: "refresh",
-                                                           class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
-                <% else %>
-                <li> <%= link_to("", portfolio_path(params[:id]), title: "Refresh Page", id: "refresh",
-                                                                  class: "navi-btn glyphicon glyphicon-refresh") %> </li>
-              <% end %>
-             <li> <a href="#" title="Remove stock from portfolio", id="delete", class="navi-btn glyphicon glyphicon-trash"></a> </li>
+               <li> <%= link_to(" Logout", destroy_user_session_path, method: :delete, title: "Logout",
+                                                               id: "logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
+                <% if @portfolio %>
+                  <li> <%= link_to(" Refresh", portfolio_index_path, title: "Refresh Page", id: "refresh",
+                                                             class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
+                  <% else %>
+                  <li> <%= link_to(" Refresh", portfolio_path(params[:id]), title: "Refresh Page", id: "refresh",
+                                                                    class: "navi-btn glyphicon glyphicon-refresh") %> </li>
+                <% end %>
+               <li> <a href="#" title="Remove stock from portfolio", id="delete", class="navi-btn glyphicon glyphicon-trash"> Delete</a> </li>
+             </ul>
+            </li>
              <li> <a href="#" title="Watchlist - Coming Soon!" id="spy", class="navi-btn glyphicon glyphicon-eye-open"></a> </li>
-             <li><a href="#" title="Coming Soon!" id="search" class="navi-btn glyphicon glyphicon-search"></a></li>
+             <li> <a href="#" title="Coming Soon!" id="search" class="navi-btn glyphicon glyphicon-search"></a></li>
             <% else %>
-              <li> <%= link_to("Login", new_user_session_path) %> </li>
-              <li> <%= link_to("Sign up", new_user_registration_path) %> </li>
+              <li> <%= link_to("Login", new_user_session_path, class: "reset-fnt") %> </li>
+              <li> <%= link_to("Sign up", new_user_registration_path, class: "reset-fnt") %> </li>
             <% end %>
           </ul>
 

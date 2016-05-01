@@ -1,6 +1,5 @@
 @import 'variables';
 
-.navi-btn { font-size: 1.5em; }
 .navspacer { height: 50px; }
 .gly-spin {
   -webkit-animation: spin 2s infinite linear;
@@ -54,13 +53,23 @@ nav {
   }
 }
 
-.navbar-inverse .navbar-nav>li>a {
+// for navigation icons
+.nav-btn {
+  font-size: 1.5em;
+  padding: 10px;
   color: $site-clr !important;
 
   &:hover {
     color: $dig-clr !important;
   }
 }
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a {
+  @extend .nav-btn
+}
+
+// for login and signup on homepage
+.reset-fnt { font-size: 1em !important }
 
 // add stock form
 #add-stock {
@@ -71,6 +80,21 @@ nav {
 
     &:focus {
       background-color: $w-clr;
+    }
+  }
+
+  input:last-child { width: 100% }
+}
+
+// right side menu of navbar
+ul#navbar-r {
+
+  ul.dropdown-menu {
+    background-color: $b-clr;
+    font-size: 1.5em;
+
+    li a {
+      color: $site-clr;
     }
   }
 }
