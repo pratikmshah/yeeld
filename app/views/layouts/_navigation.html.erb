@@ -19,22 +19,20 @@
           <ul id="navbar-r" class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle navi-btn glyphicon glyphicon-menu-hamburger" data-toggle="dropdown"
+              <a href="#" class="dropdown-toggle navi-btn glyphicon glyphicon-cog" data-toggle="dropdown"
                                                       role="button" aria-haspopup="true" aria-expanded="false"></a>
               <ul class="dropdown-menu">
                 <% if flash[:hide_form] == false %>
                   <li>
-                      <%= form_for(@stock, remote: true, html: { class: "navbar-form navbar-right no-marg", role: "add stock" }) do |f| %>
-                        <div id="add-stock" class="form-group">
-                          <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
-                          <%= f.submit "Add stock", class: "btn btn-success form-control" %>
-                        </div>
-                      <% end %>
+                    <%= form_for(@stock, remote: true, html: { class: "navbar-form navbar-right no-marg", role: "add stock" }) do |f| %>
+                      <div id="add-stock" class="form-group">
+                        <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control", autocomplete: "off" %>
+                        <%= f.submit "Add stock", class: "btn btn-success form-control" %>
+                      </div>
+                    <% end %>
                   </li>
                   <li role="separator" class="divider"></li>
                 <% end %>
-               <li> <%= link_to(" Logout", destroy_user_session_path, method: :delete, title: "Logout",
-                                                               id: "logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
                 <% if @portfolio %>
                   <li> <%= link_to(" Refresh", portfolio_index_path, title: "Refresh Page", id: "refresh",
                                                              class: "navi-btn glyphicon glyphicon-refresh", remote: true) %> </li>
@@ -43,6 +41,9 @@
                                                                     class: "navi-btn glyphicon glyphicon-refresh") %> </li>
                 <% end %>
                <li> <a href="#" title="Remove stock from portfolio", id="delete", class="navi-btn glyphicon glyphicon-trash"> Delete</a> </li>
+               <li role="separator" class="divider"></li>
+               <li> <%= link_to(" Logout", destroy_user_session_path, method: :delete, title: "Logout",
+                                                               id: "logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
              </ul>
             </li>
              <li> <a href="#" title="Watchlist - Coming Soon!" id="spy", class="navi-btn glyphicon glyphicon-eye-open"></a> </li>

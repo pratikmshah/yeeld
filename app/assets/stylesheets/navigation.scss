@@ -74,6 +74,8 @@ nav {
 // add stock form
 #add-stock {
 
+  padding: 15px;
+
   #stock_ticker {
     background-color: $nav-clr;
     border-color: $nav-clr;
@@ -93,8 +95,17 @@ ul#navbar-r {
     background-color: $b-clr;
     font-size: 1.5em;
 
-    li a {
-      color: $site-clr;
+    li {
+      margin-top: 7px;
+
+      a {
+        color: $site-clr;
+
+        &:hover {
+          background-color: $b-clr;
+          color: $dig-clr;
+        }
+      }
     }
   }
 }
