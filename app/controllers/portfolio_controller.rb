@@ -4,11 +4,13 @@ class PortfolioController < ApplicationController
     @stock = Stock.new
     @user_portfolio = current_user.stocks                    # get list of all user's stock porfolio
     @portfolio = Stock.stock_tickers(@user_portfolio).sort   # retrieve only the stock tickers from the list and sort by ticker symbol
+    flash[:hide_form] = false;
   end
 
   def show
     @stock = Stock.find(params[:id])
     @stock = Stock.stock_tickers([@stock])
+    flash[:hide_form] = true;
   end
 
   def destroy

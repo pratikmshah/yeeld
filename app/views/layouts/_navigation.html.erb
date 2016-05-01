@@ -17,15 +17,17 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
           <ul class="nav navbar-nav navbar-right">
-            <li>
-              <%= form_for(@stock, remote: true, html: { class: "navbar-form navbar-right", role: "add stock" }) do |f| %>
-                <div id="add-stock" class="form-group">
-                  <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
-                  <%= f.submit "Add stock", class: "btn btn-success form-control" %>
-                </div>
-              <% end %>
-            </li>
             <% if user_signed_in? %>
+              <li>
+                <% if flash[:hide_form] == false %>
+                  <%= form_for(@stock, remote: true, html: { class: "navbar-form navbar-right", role: "add stock" }) do |f| %>
+                    <div id="add-stock" class="form-group">
+                      <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control" %>
+                      <%= f.submit "Add stock", class: "btn btn-success form-control" %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </li>
              <li> <%= link_to("", destroy_user_session_path, method: :delete, title: "Logout",
                                                              id: "logout", class: "navi-btn glyphicon glyphicon-log-out") %> </li>
               <% if @portfolio %>
