@@ -77,7 +77,11 @@
       <p>
         <% company_info = company_summary(stock.symbol) %>
         <%= company_info[:summary] %>
-        <a href="<%= company_info[:rlink] %>" target="_blank">More information from Reuters.</a>
+        <% if company_info[:summary] == "No description found. " %>
+          <a href="<%= company_info[:rlink] %><%= stock.symbol %> stock" target="_blank">click for Google search.</a>
+        <% else %>
+          <a href="<%= company_info[:rlink] %>" target="_blank">More information from Reuters.</a>
+        <% end %>
       </p>
     </section>
 
