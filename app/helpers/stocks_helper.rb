@@ -13,6 +13,16 @@ module StocksHelper
      :ebitda, :change, :close, :previous_close, :change_in_percent, :short_ratio]
   end
 
+  # request watchlist info
+  def stock_watchlist(ticker)
+    YahooFinance::Client.new.quotes(ticker, watchlist_info)
+  end
+
+  # watchlist info
+  def watchlist_info
+    [:name, :symbol, :change]
+  end
+
   # returns historical stock data for over a year
   def stock_historical_data(ticker, days)
     YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - days, end_date: Date.today })
