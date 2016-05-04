@@ -59,8 +59,23 @@
                                                     <% end %></li>
              </ul>
             </li>
-             <li> <a href="#" title="Watchlist - Coming Soon!" id="spy", class="navi-btn">
-                                                  <span class="glyphicon glyphicon-eye-open"></span></a> </li>
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle navi-btn" data-toggle="dropdown"
+                                                      role="button" aria-haspopup="true" aria-expanded="false">
+                                                      <span class="glyphicon glyphicon-eye-open"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= form_for(@spy, remote: true, html: { class: "navbar-form navbar-right no-marg", role: "add stock to watchlist" }) do |f| %>
+                    <div id="add-stock" class="form-group">
+                      <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control", autocomplete: "off" %>
+                      <%= f.submit "Spy", class: "btn btn-success form-control" %>
+                    </div>
+                  <% end %>
+                </li>
+                <li role="separator" class="divider"></li>
+              </ul>
+             </li>
+
              <li> <a href="#" title="Coming Soon!" id="search" class="navi-btn">
                                                   <span class="glyphicon glyphicon-search"></span></a></li>
             <% else %>

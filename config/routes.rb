@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   devise_for :users
   resources :stocks, only: [:new, :create, :show]
+  resources :watchlists, only: [:new, :create, :destroy]
   resources :portfolio
 
   # Example of regular route:

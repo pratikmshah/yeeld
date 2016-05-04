@@ -4,6 +4,7 @@ class PortfolioController < ApplicationController
     @stock = Stock.new
     @user_portfolio = current_user.stocks                    # get list of all user's stock porfolio
     @portfolio = Stock.stock_tickers(@user_portfolio).sort   # retrieve only the stock tickers from the list and sort by ticker symbol
+    @spy = Watchlist.new                                     # to add stocks to watchlist
     flash[:hide_form] = false;                               # show add stock form
   end
 
