@@ -81,11 +81,12 @@
                         <th><strong>Ticker</strong></th>
                         <th><strong>Price</strong></th>
                         <th><strong>Change</strong></th>
-                        <th><span class="glyphicon glyphicon-remove-sign"></span></th>
+                        <th><%= link_to("", watchlists_path, id: "refresh-watch",
+                                                    class: "navi-btn glyphicon glyphicon-refresh", remote: true) %>
                       </tr>
                       <% watchlist_data = stock_watchlist(@watchlist) %>
                       <% watchlist_data.each do |data| %>
-                        <%= render '/watchlists/watchlist', stock: data %>
+                        <%= render '/watchlists/stock_watchlist', stock: data %>
                       <% end %>
                     </table>
                   </div>

@@ -1,5 +1,5 @@
 <% new_stock_watch = stock_info( [Watchlist.find(@add_stock_watchlist.watchlist_id).ticker] ) %>
-$('#watchlist tbody').append('<%= j render "/watchlists/watchlist", stock: new_stock_watch.first %>');
+$('#watchlist tbody').append('<%= j render "/watchlists/stock_watchlist", stock: new_stock_watch.first %>');
 $('#watchlist_ticker').val('')
                       .next()
                       .attr('disabled', true);

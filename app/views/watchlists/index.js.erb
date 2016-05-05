@@ -1,0 +1,5 @@
+$parent = $('#watchlist').parent();                    // grab parent to append to
+$refresh = $('#refresh span.glyphicon-refresh');
+
+$('#watchlist').remove();                              // remove contents
+$parent.append( '<%= j render "watchlist", watchlist: @watchlist %>' );

@@ -1,5 +1,15 @@
 class WatchlistsController < ApplicationController
 
+  def index
+    @user_watchlist = current_user.watchlists
+    @watchlist = Watchlist.stock_tickers(@user_watchlist).sort
+    respond_to do |format|
+      format.html { redirect_to portfolio_index_path }
+      format.js
+    end
+
+  end
+
   def create
     user = current_user
 

@@ -120,6 +120,20 @@ nav {
 
     tr.hot  { color: $site-clr; }
     tr.cold { color: $grub-clr; }
+
+    tr td:last-child a { display: none; }
+
+    tr {
+       &:hover td:last-child a {
+        display: inline;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $w-clr;
+          color: $grub-clr;
+        }
+      }
+    }
   }
 }
 
