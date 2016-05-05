@@ -1,5 +1,10 @@
 $parent = $('#watchlist').parent();                    // grab parent to append to
-$refresh = $('#refresh span.glyphicon-refresh');
 
 $('#watchlist').remove();                              // remove contents
 $parent.append( '<%= j render "watchlist", watchlist: @watchlist %>' );
+
+$refresh = $('#refresh-watch');
+$refresh.addClass('gly-spin').delay(1000).queue(function() {  // animation
+  $refresh.removeClass('gly-spin');
+  $refresh.dequeue();
+}, 1000);
