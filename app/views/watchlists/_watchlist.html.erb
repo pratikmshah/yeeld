@@ -1,13 +1,14 @@
+<% watch = Watchlist.find_by(ticker: stock.symbol.upcase) %>
 <% if stock.change[0] == '-' %>
-  <tr class="h5 cold">
-    <td><%= stock.symbol.upcase %></td>
-    <td><%= get_market_price(stock) %></td>
-    <td><%= stock.change %></td>
-  </tr>
+  <tr id="spy<%= watch.id %>" class="h5 cold">
 <% else %>
-  <tr class="h5 hot">
+  <tr id="spy<%= watch.id %>"  class="h5 hot">
+<% end %>
     <td><%= stock.symbol.upcase %></td>
     <td><%= get_market_price(stock) %></td>
     <td><%= stock.change %></td>
+    <td>
+      <%= link_to(" ", watchlist_path(watch), method: :delete,
+                                                  class: "glyphicon glyphicon-remove", remote: true )%>
+    </td>
   </tr>
-<% end %>

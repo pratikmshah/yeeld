@@ -38,6 +38,17 @@ class WatchlistsController < ApplicationController
     end
   end
 
+  def destroy
+    user_watchlist = UserWatchlist.where(user_id: current_user.id, watchlist_id: params[:id])
+    @watch_id = user_watchlist.first.watchlist_id.to_s
+    user_watchlist.first.destroy
+
+    respond_to do |format|
+      format.html { redirect_to portfolio_index_path }
+      format.js
+    end
+  end
+
   private
 
     def watchlist_param
