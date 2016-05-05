@@ -2,14 +2,22 @@ class PortfolioController < ApplicationController
 
   def index
     @stock = Stock.new
-    @user_portfolio = current_user.stocks                    # get list of all user's stock porfolio
-    @portfolio = Stock.stock_tickers(@user_portfolio).sort   # retrieve only the stock tickers from the list and sort by ticker symbol
-    flash[:hide_form] = false;                               # show add stock form
+    @user_portfolio = current_user.stocks                         # get list of all user's stock porfolio
+    @portfolio = Stock.stock_tickers(@user_portfolio).sort        # retrieve only the stock tickers from the list and sort by ticker symbol
+
+    @watch = Watchlist.new                                        # to add stocks to watchlist
+    @user_watchlist = current_user.watchlists
+    @watchlist = Watchlist.stock_tickers(@user_watchlist).sort   # get only stocks on watchlist and sort by ticker symbol
+    flash[:hide_form] = false;                                    # show add stock form
   end
 
   def show
     @stock = Stock.find(params[:id])
     @stock = Stock.stock_tickers([@stock])
+
+    @watch = Watchlist.new
+    @user_watchlist = current_user.watchlists
+    @watchlist = Watchlist.stock_tickers(@user_watchlist).sort
     flash[:hide_form] = true;
   end
 

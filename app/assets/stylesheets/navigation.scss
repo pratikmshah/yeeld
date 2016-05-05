@@ -97,6 +97,52 @@ nav {
   input:last-child { width: 100% }
 }
 
+#spy-list {
+
+  padding: 15px;
+
+  #watchlist_ticker {
+    background-color: $nav-clr;
+    border-color: $nav-clr;
+
+    &:focus {
+      background-color: $w-clr;
+    }
+  }
+
+  input:last-child { width: 100% }
+
+}
+
+#watchlist {
+  tbody {
+
+    tr th:last-child a#refresh-watch:hover {
+      background-color: $w-clr;
+      text-decoration: none;
+    }
+
+    tr:first-child { color: $dig-clr; }
+
+    tr.hot  { color: $site-clr; }
+    tr.cold { color: $grub-clr; }
+
+    tr td:last-child a { display: none; }
+
+    tr {
+       &:hover td:last-child a {
+        display: inline;
+        text-decoration: none;
+
+        &:hover {
+          background-color: $w-clr;
+          color: $grub-clr;
+        }
+      }
+    }
+  }
+}
+
 // right side menu of navbar
 ul#navbar-r {
 

@@ -1,0 +1,13 @@
+<table id="watchlist" class="table-borderless table-condensed table-hover text-center">
+  <tr class="h4">
+    <th><strong>Ticker</strong></th>
+    <th><strong>Price</strong></th>
+    <th><strong>Change</strong></th>
+    <th><%= link_to("", watchlists_path, id: "refresh-watch",
+                                class: "navi-btn glyphicon glyphicon-refresh", remote: true) %>
+  </tr>
+  <% watchlist_data = stock_watchlist(watchlist) %>
+  <% watchlist_data.each do |data| %>
+    <%= render '/watchlists/stock_watchlist', stock: data %>
+  <% end %>
+</table>
