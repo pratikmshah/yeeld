@@ -114,6 +114,15 @@ nav {
 
 }
 
+#watchlist {
+  tbody {
+    tr:first-child { color: $dig-clr; }
+
+    tr.hot  { color: $site-clr; }
+    tr.cold { color: $grub-clr; }
+  }
+}
+
 // right side menu of navbar
 ul#navbar-r {
 

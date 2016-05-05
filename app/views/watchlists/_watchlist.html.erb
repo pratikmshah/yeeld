@@ -1,5 +1,13 @@
-<tr class="h5">
-  <td><%= stock.symbol.upcase %></td>
-  <td><%= get_market_price(stock) %></td>
-  <td><%= stock.change %></td>
-</tr>
+<% if stock.change[0] == '-' %>
+  <tr class="h5 cold">
+    <td><%= stock.symbol.upcase %></td>
+    <td><%= get_market_price(stock) %></td>
+    <td><%= stock.change %></td>
+  </tr>
+<% else %>
+  <tr class="h5 hot">
+    <td><%= stock.symbol.upcase %></td>
+    <td><%= get_market_price(stock) %></td>
+    <td><%= stock.change %></td>
+  </tr>
+<% end %>
