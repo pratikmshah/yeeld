@@ -65,14 +65,31 @@
                                                       <span class="glyphicon glyphicon-eye-open"></span></a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= form_for(@spy, remote: true, html: { class: "navbar-form navbar-right no-marg", role: "add stock to watchlist" }) do |f| %>
-                    <div id="add-stock" class="form-group">
+                  <%= form_for(@watch, remote: true, html: { class: "navbar-form navbar-right no-marg", role: "add stock to watchlist" }) do |f| %>
+                    <div id="spy-list" class="form-group">
                       <%= f.text_field :ticker, placeholder: "Ticker, Symbol", class: "form-control", autocomplete: "off" %>
                       <%= f.submit "Spy", class: "btn btn-success form-control" %>
                     </div>
                   <% end %>
                 </li>
                 <li role="separator" class="divider"></li>
+                <li class="text-center"><h3>Watchlist</h3></li>
+                <li>
+                  <div class="table-responsive">
+                    <table id="watchlist" class="table-borderless table-condensed text-center">
+                      <tr class="h4">
+                        <th>Ticker</th>
+                        <th>Price</th>
+                        <th>Change</th>
+                        <th><span class="glyphicon glyphicon-remove-sign"></span></th>
+                      </tr>
+                      <% watchlist_data = stock_watchlist(@watchlist) %>
+                      <% watchlist_data.each do |data| %>
+                        <%= render '/watchlists/watchlist', stock: data %>
+                      <% end %>
+                    </table>
+                  </div>
+                </li>
               </ul>
              </li>
 

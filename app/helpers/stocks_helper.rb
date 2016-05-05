@@ -20,7 +20,7 @@ module StocksHelper
 
   # watchlist info
   def watchlist_info
-    [:name, :symbol, :change]
+    [:name, :symbol, :change, :previous_close]
   end
 
   # returns historical stock data for over a year

@@ -32,7 +32,10 @@ class WatchlistsController < ApplicationController
       end
     end
 
-    redirect_to portfolio_index_path
+    respond_to do |format|
+     format.html { redirect_to portfolio_index_path }
+     format.js
+    end
   end
 
   private

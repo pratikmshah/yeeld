@@ -97,6 +97,23 @@ nav {
   input:last-child { width: 100% }
 }
 
+#spy-list {
+
+  padding: 15px;
+
+  #watchlist_ticker {
+    background-color: $nav-clr;
+    border-color: $nav-clr;
+
+    &:focus {
+      background-color: $w-clr;
+    }
+  }
+
+  input:last-child { width: 100% }
+
+}
+
 // right side menu of navbar
 ul#navbar-r {
 

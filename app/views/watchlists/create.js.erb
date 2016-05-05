@@ -1,0 +1,2 @@
+<% new_stock_watch = stock_info( [Watchlist.find(@add_stock_watchlist.watchlist_id).ticker] ) %>
+$('#watchlist').append('<%= j render "/watchlists/watchlist", stock: new_stock_watch.first %>');
