@@ -14,6 +14,10 @@ class PortfolioController < ApplicationController
   def show
     @stock = Stock.find(params[:id])
     @stock = Stock.stock_tickers([@stock])
+
+    @watch = Watchlist.new
+    @user_watchlist = current_user.watchlists
+    @watchlist = Watchlist.stock_tickers(@user_watchlist).sort
     flash[:hide_form] = true;
   end
 
