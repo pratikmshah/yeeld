@@ -50,8 +50,12 @@
           <tr>
             <td class="text-muted" title="Vol - number of shares traded in current session. Average volume is measured over 30 days">Vol/Avg.</td>
             <td>
-              <%= number_to_human(stock.volume) %> /
-              <%= number_to_human(stock.average_daily_volume) %>
+              <% if stock.volume.to_i < 10 %>
+                <%= stock.volume %> /
+              <% else %>
+                <%= number_to_human(stock.volume, units: :number_units) %> /
+              <% end %>
+              <%= number_to_human(stock.average_daily_volume, units: :number_units) %>
             </td>
             <td class="text-muted" title="Earnings before interest, taxes, depreciation, and amortization">EBITDA</td>
             <td><%= stock.ebitda %></td>

@@ -66,6 +66,10 @@
   #chart-1 { height: 200px; }
 }
 
+@media (max-width: 500px) {
+  section.stock-chart { display: none; }
+}
+
 @media (min-width: 1200px) {
   #market-value { max-width: 300px; }
 }
