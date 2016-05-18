@@ -74,7 +74,11 @@
       </div>
     </section>
 
-    <%= render '/stocks/stock_chart', stock: stock.symbol, chart_height: "500px", days: 356 %>
+    <div id="chart-msg" class="text-center h3">Rotate phone for chart</div>
+
+    <div id="chart-show">
+      <%= render '/stocks/stock_chart', stock: stock.symbol, chart_height: "500px", days: 356 %>
+    </div>
 
     <section id="company-info" class="col-sm-8 col-sm-offset-2 col-xs-12 text-muted">
       <h4>About <%= stock.name %></h4>

@@ -67,7 +67,12 @@
 }
 
 @media (max-width: 500px) {
-  section.stock-chart { display: none; }
+  div#chart-show { display: none; }
+  div#chart-msg { color: $dig-clr; }
+}
+
+@media (min-width: 500px) {
+  div#chart-msg { display: none; }
 }
 
 @media (min-width: 1200px) {
