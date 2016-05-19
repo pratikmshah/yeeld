@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+  include StocksHelper
 
   def create
     user = current_user
@@ -46,7 +47,22 @@ class StocksController < ApplicationController
 
   # to look up stocks
   def search
+    if params[:search] && !params[:search].include?(" ")
+      @search_result = stock_watchlist([ params[:search] ])
 
+      if @search_result.first[:name] == 'N/A'
+        flash[:notice] = "Stock was not found."
+      else
+        @search_result.first
+      end
+    else
+      flash[:notice] = "Stock was not found."
+    end
+
+    respond_to do |format|
+     format.html { redirect_to portfolio_index_path }
+     format.js
+    end
   end
 
   private

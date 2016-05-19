@@ -108,7 +108,7 @@
                   <div id="stock-search-form">
                     <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
                       <div class="input-group">
-                        <%= text_field_tag :stock, params[:stock], placeholder: "Search", class: 'form-control' %>
+                        <%= text_field_tag :search, params[:search], placeholder: "Enter company ticker", class: 'form-control', id: 'stock_search' %>
                         <span class="input-group-addon">
                             <%= button_tag("",type: :submit, class: "btn btn-sm glyphicon glyphicon-search") %>
                         </span>
@@ -116,7 +116,7 @@
                     <% end %>
                   </div>
                 </li>
-                <li id="search-results"></li>
+                <li id="search_results"></li>
               </ul>
 
              </li>
@@ -133,16 +133,3 @@
    </div> <!-- row -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-
-<!--   <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
-      <div class="input-group">
-        <%= text_field_tag :stock, params[:stock], placeholder: "Search stocks",
-                                                          class: 'form-control', id: 'search' %>
-
-          <%= button_tag(type: :submit, class: "btn btn-lg btn-success input-group-addon") do %>
-            <i class="glyphicon glyphicon-search"></i>
-          <% end %>
-      </div>
-  <% end %> -->
