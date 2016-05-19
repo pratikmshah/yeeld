@@ -44,6 +44,11 @@ class StocksController < ApplicationController
     end
   end
 
+  # to look up stocks
+  def search
+
+  end
+
   private
 
     def stock_param
