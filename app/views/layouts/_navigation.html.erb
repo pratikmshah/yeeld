@@ -105,18 +105,18 @@
                                                       <span class="glyphicon glyphicon-search"></span></a>
               <ul class="dropdown-menu">
                 <li>
-                  <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
-                    <div class="form-group row no-padding text-center col-xs-12">
-                      <div class="col-xs-12">
-                        <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol",
-                                                                          class: 'form-control search-box input-sm' %>
-                        <%= button_tag(type: :submit, class: "btn btn-sm btn-success") do %>
-                          <span class="glyphicon glyphicon-search"></span>
-                        <% end %>
+                  <div id="stock-search-form">
+                    <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
+                      <div class="input-group">
+                        <%= text_field_tag :stock, params[:stock], placeholder: "Search", class: 'form-control' %>
+                        <span class="input-group-addon">
+                            <%= button_tag("",type: :submit, class: "btn btn-sm glyphicon glyphicon-search") %>
+                        </span>
                       </div>
-                    </div>
-                  <% end %>
+                    <% end %>
+                  </div>
                 </li>
+                <li id="search-results"></li>
               </ul>
 
              </li>
@@ -133,3 +133,16 @@
    </div> <!-- row -->
   </div><!-- /.container-fluid -->
 </nav>
+
+
+
+<!--   <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
+      <div class="input-group">
+        <%= text_field_tag :stock, params[:stock], placeholder: "Search stocks",
+                                                          class: 'form-control', id: 'search' %>
+
+          <%= button_tag(type: :submit, class: "btn btn-lg btn-success input-group-addon") do %>
+            <i class="glyphicon glyphicon-search"></i>
+          <% end %>
+      </div>
+  <% end %> -->

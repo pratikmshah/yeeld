@@ -146,6 +146,18 @@ nav {
 
 #stock-search-form {
   min-width: 300px;
+  min-height: 40px;
+
+  .input-group {
+    padding: 0 15px;
+
+    span {
+      padding: 0;
+      border-color: #eee;
+
+      button { background-color: #eee; }
+    }
+  }
 }
 
 // right side menu of navbar

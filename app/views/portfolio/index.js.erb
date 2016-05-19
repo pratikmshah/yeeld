@@ -2,9 +2,9 @@ $parent = $('#stocks-container').parent();                    // grab parent to 
 $refresh = $('#refresh span.glyphicon-refresh');
 
 $('#stocks-container').remove();                              // remove contents
-$refresh.addClass('gly-spin').delay(1000).queue(function() {  // animation
+$refresh.addClass('gly-spin').delay(500).queue(function() {  // animation
   $refresh.removeClass('gly-spin');
   $refresh.dequeue();
-}, 1000);
+}, 2000);
 $parent.append( '<%= j render "portfolio", portfolio: @portfolio %>' );
 $('.del-stock').toggle();
