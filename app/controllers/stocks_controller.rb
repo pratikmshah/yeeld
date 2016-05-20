@@ -53,7 +53,7 @@ class StocksController < ApplicationController
       if @search_result.first[:name] == 'N/A'
         flash[:notice] = "Stock was not found."
       else
-        @search_result.first
+        @search_result
       end
     else
       flash[:notice] = "Stock was not found."

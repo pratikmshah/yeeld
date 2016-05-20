@@ -108,7 +108,7 @@
                   <div id="stock-search-form">
                     <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
                       <div class="input-group">
-                        <%= text_field_tag :search, params[:search], placeholder: "Enter company ticker", class: 'form-control', id: 'stock_search' %>
+                        <%= text_field_tag :search, params[:search], placeholder: "Enter company ticker", class: 'form-control', id: 'stock_search', autocomplete: "off" %>
                         <span class="input-group-addon">
                             <%= button_tag("",type: :submit, class: "btn btn-sm glyphicon glyphicon-search") %>
                         </span>
@@ -116,7 +116,7 @@
                     <% end %>
                   </div>
                 </li>
-                <li id="search_results"></li>
+                <li id="search-results"></li>
               </ul>
 
              </li>

@@ -5,6 +5,8 @@
     <th><strong>Price</strong></th>
   </tr>
   <tr>
-
+    <td><%= search_result.name %></td>
+    <td><%= search_result.symbol.upcase %></td>
+    <td><%= get_market_price(search_result) %></td>
   </tr>
 </table>
