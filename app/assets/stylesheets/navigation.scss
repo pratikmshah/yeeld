@@ -63,7 +63,8 @@ nav {
   color: $site-clr !important;
 
   &:hover {
-    border-bottom: 2px solid $dig-clr;
+    // border-bottom: 2px solid $dig-clr;
+    //background: $b-clr !important;
     color: $dig-clr !important;
   }
 
@@ -140,6 +141,38 @@ nav {
         }
       }
     }
+  }
+}
+
+#stock-search-form {
+  min-width: 300px;
+  min-height: 40px;
+
+  .input-group {
+    padding: 0 15px;
+
+    span {
+      padding: 0;
+      border-color: #eee;
+
+      button { background-color: #eee; }
+    }
+  }
+}
+
+#search-results {
+  table {
+    margin: 0 auto;
+
+    tr th strong {
+      color: $dig-clr;
+    }
+
+    tr td {
+      font-size: 14px;
+      color: $w-clr;
+    }
+
   }
 }
 

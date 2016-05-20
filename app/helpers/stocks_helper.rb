@@ -13,7 +13,7 @@ module StocksHelper
      :ebitda, :change, :close, :previous_close, :change_in_percent, :short_ratio]
   end
 
-  # request watchlist info
+  # request watchlist info # also used for search
   def stock_watchlist(ticker)
     YahooFinance::Client.new.quotes(ticker, watchlist_info)
   end

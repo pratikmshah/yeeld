@@ -1,0 +1,2 @@
+$('#search-results table').remove();
+$('#search-results').append('<%= j render "/stocks/search", search_result: @search_result.first %>');

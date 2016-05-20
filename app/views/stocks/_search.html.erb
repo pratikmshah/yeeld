@@ -1,0 +1,12 @@
+<table class="table-borderless table-condensed">
+  <tr class="h4">
+    <th><strong>Name</strong></th>
+    <th><strong>Ticker</strong></th>
+    <th><strong>Price</strong></th>
+  </tr>
+  <tr>
+    <td><%= search_result.name %></td>
+    <td><%= search_result.symbol.upcase %></td>
+    <td><%= get_market_price(search_result) %></td>
+  </tr>
+</table>

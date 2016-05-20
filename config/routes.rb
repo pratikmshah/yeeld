@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :watchlists, only: [:index, :new, :create, :destroy]
   resources :portfolio
 
+  get 'search_stocks', to: "stocks#search"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

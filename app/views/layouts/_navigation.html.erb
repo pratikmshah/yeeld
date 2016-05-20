@@ -18,6 +18,8 @@
 
           <ul id="navbar-r" class="nav navbar-nav navbar-right">
             <% if user_signed_in? %>
+
+            <!-- add stock to portfolio -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle navi-btn" data-toggle="dropdown"
                                                       role="button" aria-haspopup="true" aria-expanded="false">
@@ -59,6 +61,8 @@
                                                     <% end %></li>
              </ul>
             </li>
+
+             <!-- watchlist -->
              <li class="dropdown">
               <a href="#" class="dropdown-toggle navi-btn" data-toggle="dropdown"
                                                       role="button" aria-haspopup="true" aria-expanded="false">
@@ -94,8 +98,30 @@
               </ul>
              </li>
 
-             <li> <a href="#" title="Coming Soon!" id="search" class="navi-btn">
-                                                  <span class="glyphicon glyphicon-search"></span></a></li>
+             <!-- search bar -->
+             <li class="dropdown">
+              <a href="#" class="dropdown-toggle navi-btn" data-toggle="dropdown"
+                                                      role="button" aria-haspopup="true" aria-expanded="false">
+                                                      <span class="glyphicon glyphicon-search"></span></a>
+              <ul class="dropdown-menu">
+                <li>
+                  <div id="stock-search-form">
+                    <%= form_tag search_stocks_path, remote: true, method: :get, id: 'stock-search-form' do %>
+                      <div class="input-group">
+                        <%= text_field_tag :search, params[:search], placeholder: "Enter company ticker", class: 'form-control', id: 'stock_search', autocomplete: "off" %>
+                        <span class="input-group-addon">
+                            <%= button_tag("",type: :submit, class: "btn btn-sm glyphicon glyphicon-search") %>
+                        </span>
+                      </div>
+                    <% end %>
+                  </div>
+                </li>
+                <li id="search-results"></li>
+              </ul>
+
+             </li>
+
+             <!-- login and logout homepage -->
             <% else %>
               <li> <%= link_to("Login", new_user_session_path, class: "reset-fnt") %> </li>
               <li> <%= link_to("Sign up", new_user_registration_path, class: "reset-fnt") %> </li>
