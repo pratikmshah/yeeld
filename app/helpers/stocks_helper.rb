@@ -24,8 +24,29 @@ module StocksHelper
   end
 
   # returns historical stock data for over a year
-  def stock_historical_data(ticker, days)
-    YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - days, end_date: Date.today })
+  def stock_historical_data(ticker)
+    ############################################################################
+    # Yahoo Finance historical quotes has been deprecated
+    # YahooFinance::Client.new.historical_quotes(ticker, { start_date: Date.today - days, end_date: Date.today })
+    ############################################################################
+    i = 0
+    history = { date: [], price: [] }
+
+    url = "https://finance.yahoo.com/quote/" + ticker + "/history?"
+    doc = Nokogiri::HTML(open(url))
+    data = doc.at('table[data-test="historical-prices"]')
+
+    while i < data.children[1].children.length do
+      check = data.children[1].children[i].text
+
+      if (!check.include?('Dividend') && !check.include?('Split'))
+      	history[:date] << data.children[1].children[i].children[0].text
+      	history[:price] << data.children[1].children[i].children[5].text.to_f
+      end
+
+      i+=1
+    end
+    history
   end
 
   #  return chart options
@@ -35,11 +56,12 @@ module StocksHelper
   end
 
   # return chart data
-  def chart_data(ticker, days)
-    data = stock_historical_data(ticker, days)
-    dates = parse_date(data)
-    prices = parse_price(data)
-    parse_chart_data(dates, prices)
+  def chart_data(ticker)
+    data = stock_historical_data(ticker)
+    # deprecated yahoo historical data api
+    # dates = parse_date(data)
+    # prices = parse_price(data)
+    parse_chart_data(data[:date], data[:price])
   end
 
   # get market price
