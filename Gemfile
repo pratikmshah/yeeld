@@ -7,10 +7,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
-gem 'yahoo-finance'
+gem 'yahoo-finance', '~> 1.0.0'
 gem "stock_quote"
 gem 'chartkick'
 gem 'groupdate'
+gem 'open_uri_redirections'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_12factor', group: :production
@@ -29,4 +30,3 @@ group :development do
   gem 'spring'
   gem "better_errors"
 end
-
